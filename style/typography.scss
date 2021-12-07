@@ -1,0 +1,23 @@
+@use 'var.scss';
+
+//TODO: move
+$breakpoint-mobile-large: 768px;
+
+
+@font-face {
+    font-family: "cocogoose";
+    src: url('../assets/Cocogoose-thin.ttf') format('truetype');
+    src: url('../assets/Cocogoose-light.ttf') format('truetype');
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "cocogoose";
+}
+
+p, ul{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: $breakpoint-mobile-large) {
+}
