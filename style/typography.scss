@@ -6,17 +6,26 @@ $breakpoint-mobile-large: 768px;
 
 @font-face {
     font-family: "cocogoose";
-    src: url('../assets/Cocogoose-thin.ttf') format('truetype');
-    src: url('../assets/Cocogoose-light.ttf') format('truetype');
+    src: url('../assets/fonts/Cocogoose-thin.ttf');
+    src: url('../assets/fonts/Cocogoose-light.ttf');
+    src: url('../assets/fonts/cocogoose_trial.otf');
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1 ,h2, h3,h4,h5,h6 {
     font-family: "cocogoose";
+    color: var(--col-text);
+    font-weight: 200;
 }
 
 p, ul{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    color: var(--col-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--col-link);
 }
 
 @media (max-width: $breakpoint-mobile-large) {

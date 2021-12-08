@@ -9,33 +9,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <header class="header-container">
+    <header class="header-container" data-header>
         <nav>
-            <ul class="header-links">
-                <li>Home</li>
-                <li>Schedule</li>
-                <li>Resources</li>
-                <li>Groups</li>
-                <li>Chat</li>
+            <ul class="header-links closed" data-header-links>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="groups.html">Groups</a>
+                </li>
+                <li>
+                    <a href="chat">Chat</a>
+                </li>
+                <li class="menu-link" data-menu-toggle>
+                    <img class="menu-icon" src="assets/svg/menu-icon.svg" alt=""/>
+                </li>
             </ul>
             <ul class="icon-container">
-                <img class="profile-icon" src="" alt="test"/>
+                <a href="profile.html">
+                    <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test"/>
+                </a>
             </ul>
         </nav>
     </header>
 
-    <main class="main-container split">
-        <section class="col" >
-            cool
+    <section class="container full-height full-width">
+        <div class="img-with-text-container">
+            <h1>Your courses</h1>
+            <img class="main-img" src =""/>
+        </div>
+    </section>
+
+    <main class="container main split two-one">
+        <section class="col">
+            <div class="course-container" data-toggle>
+                <h3 class="title" data-toggle-btn >Course 1</h3>
+                <div class="content-wrapper closed" data-toggle-wrapper>
+                    <p>Hello</p>
+                </div>
+            </div>
+            <div class="course-container" data-toggle>
+                <h3 class="title" data-toggle-btn >Course 2</h3>
+                <div class="content-wrapper closed" data-toggle-wrapper>
+                    <p></p>
+                </div>
+            </div>
+            <div class="course-container" data-toggle>
+                <h3 class="title" data-toggle-btn >Course 1</h3>
+                <div class="content-wrapper closed" data-toggle-wrapper>
+                    <p></p>
+                </div>
+            </div>
         </section>
 
-        <section class="col" >
-            cool
+        <section class="col">
         </section>
     </main>
 
     <footer>
 
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

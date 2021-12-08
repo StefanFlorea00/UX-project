@@ -1,0 +1,22 @@
+@use 'var.scss';
+
+.course-container {
+    min-width: 400px;
+    padding: 10px 20px;
+    background-color: var(--col-secondary);
+    margin-bottom: 20px;
+    border-radius: var(--border-r-small);
+
+    .title:hover {
+        cursor: pointer;
+        color: var(--col-link)
+    }
+
+    .content-wrapper {
+        padding: 20px 0;
+
+        &.closed {
+            display: none;
+        }
+    }
+}

@@ -2,22 +2,24 @@
     //color
     --col-primary: #fcb1a6ff;
     --col-secondary: #8aa39bff;
+    --col-secondary-dark: #597c71;
     --col-alt-1: #7d869cff;
     --col-alt-2: #e5e8b6ff;
     --col-alt-3: #b4c4aeff;
+    --col-link: #4b635b;
+    --col-text: #333;
 
     //borders
-    --border-r-small: ;
-    --border-r-medium: ;
-    --border-r-large: ;
+    --border-r-small: 5px;
+    --border-r-medium: 7px;
+    --border-r-large: 10px;
 
     //media
     --media-small: 600px;
     --media-medium: 768px;
     --media-tablet: 992px;
     --media-desktop: 1200px;
-    
-    $breakpoint-tablet: 768px;
+
     //fonts
   }
 

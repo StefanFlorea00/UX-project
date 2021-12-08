@@ -2,62 +2,67 @@
 @use 'var.scss';
 @use 'util.scss';
 @use 'header.scss';
+@use 'course-container.scss';
 
 //TODO: move
 $breakpoint-tablet: 768px;
 $breakpoint-mobile-large: 768px;
 
-.header-container {
-    background-color: var(--col-primary);
-    padding: 0 40px;
-
-    .header-links li {
-        padding: 25px 10px;
-            
-        @media (max-width: $breakpoint-mobile-large) {
-            font-size: 14px;   
-            padding: 15px 0;
-        }
-    }
-
-    @media (max-width: $breakpoint-mobile-large) {   
-        padding: 0 20px;
-    }
-}
-
 .profile-icon {
-    padding: 20px;     
-    background-color:var(--col-alt-2);         
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--col-secondary);
+    padding: 5px;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
 }
 
-@media (min-width: $breakpoint-tablet) {
-.header-container {
-    nav {
-        display: flex;
-        align-items: center;
+.container {
+    padding: 20px 0;
 
-        .header-links {
-            display: flex;
-            
-            li {
-                padding: 25px 20px;
+    &.full-height {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &.full-width {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.container.main {
+    height: 300px;
+
+    &.split {
+        @media (min-width: $breakpoint-mobile-large) {
+            display: grid;
+
+            &.two-one {
+            grid-template-columns: 2fr 1fr;
             }
         }
 
-        .icon-container {
-            margin-left: auto;
+        .col {
+            padding: 20px;
         }
     }
 }
-}
 
-.main-container {
-    background-color: red;
-    height: 300px;
-    padding: 20px 0;
+.img-with-text-container {
+    position: relative;
 
-    @media (min-width: $breakpoint-mobile-large) {
-        display: grid;
-        grid-template-columns: 2.25fr 0.75fr;
+    h1,h2,h3,h4,h5,h6,p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
+}
+.main-img {
+    height: 300px;
+    width: 100%;
 }
