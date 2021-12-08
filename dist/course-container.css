@@ -1,0 +1,37 @@
+:root {
+  --col-primary: #fcb1a6ff;
+  --col-secondary: #8aa39bff;
+  --col-secondary-dark: #597c71;
+  --col-alt-1: #7d869cff;
+  --col-alt-2: #e5e8b6ff;
+  --col-alt-3: #b4c4aeff;
+  --col-link: #4b635b;
+  --col-text: #333;
+  --border-r-small: 5px;
+  --border-r-medium: 7px;
+  --border-r-large: 10px;
+  --media-small: 600px;
+  --media-medium: 768px;
+  --media-tablet: 992px;
+  --media-desktop: 1200px;
+}
+
+.course-container {
+  min-width: 400px;
+  padding: 10px 20px;
+  background-color: var(--col-secondary);
+  margin-bottom: 20px;
+  border-radius: var(--border-r-small);
+}
+.course-container .title:hover {
+  cursor: pointer;
+  color: var(--col-link);
+}
+.course-container .content-wrapper {
+  padding: 20px 0;
+}
+.course-container .content-wrapper.closed {
+  display: none;
+}
+
+/*# sourceMappingURL=course-container.css.map */

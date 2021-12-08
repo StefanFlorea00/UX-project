@@ -1,0 +1,164 @@
+:root {
+  --col-primary: #fcb1a6ff;
+  --col-secondary: #8aa39bff;
+  --col-alt-1: #7d869cff;
+  --col-alt-2: #e5e8b6ff;
+  --col-alt-3: #b4c4aeff;
+}
+
+/* FOR STYLE TILE */
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+header {
+  background-color: var(--col-primary);
+  height: 50px;
+  padding: 10px;
+}
+
+main {
+  padding: 20px 0;
+  margin: 0 10vw;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex > div:first-child,
+.flex .btn:first-child {
+  margin-left: 0;
+}
+
+.half-width {
+  width: 50%;
+  min-width: 400px;
+}
+
+.spaced-row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+/* ****************************** */
+/* ****** ELEMENTS STYLING ****** */
+/* ****************************** */
+/* TYPOGRAPHY */
+@font-face {
+  font-family: "cocogoose";
+  src: url(cocogoose/Cocogoose\ Pro\ Semilight-trial.ttf);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "cocogoose", sans-serif;
+  margin: 10px 0;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+/* END TYPOGRAPHY */
+/* COLORS */
+.color-item-container {
+  margin: 0 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-item {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border: solid 1px lightgray;
+}
+
+.col-primary {
+  background-color: var(--col-primary);
+}
+
+.col-secondary {
+  background-color: var(--col-secondary);
+}
+
+.col-alt-1 {
+  background-color: var(--col-alt-1);
+}
+
+.col-alt-2 {
+  background-color: var(--col-alt-2);
+}
+
+.col-alt-3 {
+  background-color: var(--col-alt-3);
+}
+
+/* END COLORS */
+/* LAYOUT */
+.container {
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: var(--col-secondary);
+  max-width: 400px;
+}
+
+/* END LAYOUT */
+/* BUTTON */
+.btn {
+  appearance: none;
+  margin: 5px;
+  height: 55px;
+  width: 130px;
+  border: none;
+  transition: 0.3s transform;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.btn:hover {
+  background-color: red;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: var(--col-primary);
+  border: solid 1px #d3b8b0;
+}
+
+.btn.secondary {
+  background-color: var(--col-secondary);
+  border: solid 1px #cac8bb;
+}
+
+/* END BUTTON */
+
+/*# sourceMappingURL=style.css.map */
