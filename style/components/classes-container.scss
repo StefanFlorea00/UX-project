@@ -1,0 +1,47 @@
+@use '../var.scss';
+
+.classes-container {
+    background-color: var(--col-secondary);
+    border-radius: var(--border-r-medium);
+
+    .scrolling-wrapper {
+        background-color: #eee;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        overflow-x: scroll;
+        white-space: pre;
+        align-items: center;
+
+        .class-item {
+            padding: 0 15px;
+            border-radius: var(--border-r-medium);
+            margin: 0 20px;
+            background-color: var(--col-primary);
+            min-width: 200px;
+            height: 100px;
+
+            &:hover {
+                background-color: var(--col-primary-light);
+                cursor: pointer;
+            }
+        }
+    }
+
+    //desktop
+    @media (min-width: 768px) {
+        height: 500px;
+        padding: 5px;
+
+        .scrolling-wrapper {
+            display: block;
+            overflow-y: scroll;
+            overflow-x: auto;
+            border-radius: var(--border-r-medium);
+
+            .class-item {
+            min-width: 400px;
+            }
+        }
+    }
+}

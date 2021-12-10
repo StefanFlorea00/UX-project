@@ -1,6 +1,8 @@
 :root {
   --col-primary: #fcb1a6ff;
+  --col-primary-light: rgb(255, 197, 188);
   --col-secondary: #8aa39bff;
+  --col-secondary-light: rgb(139, 173, 163);
   --col-secondary-dark: #597c71;
   --col-alt-1: #7d869cff;
   --col-alt-2: #e5e8b6ff;
@@ -28,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "cocogoose";
   color: var(--col-text);
   font-weight: 200;
+}
+
+h1 {
+  margin-bottom: 1em;
 }
 
 .h3-style {
@@ -219,6 +225,9 @@ ul {
   height: 100%;
   border-radius: var(--border-r-medium);
 }
+.calendar.schedule .days li.active:hover {
+  background-color: var(--col-primary-light);
+}
 .calendar.schedule .days li .assignment-container {
   padding: 10px 5px 5px 5px;
 }
@@ -339,6 +348,47 @@ ul {
   }
 }
 
+.classes-container {
+  background-color: var(--col-secondary);
+  border-radius: var(--border-r-medium);
+}
+.classes-container .scrolling-wrapper {
+  background-color: #eee;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  overflow-x: scroll;
+  white-space: pre;
+  align-items: center;
+}
+.classes-container .scrolling-wrapper .class-item {
+  padding: 0 15px;
+  border-radius: var(--border-r-medium);
+  margin: 0 20px;
+  background-color: var(--col-primary);
+  min-width: 200px;
+  height: 100px;
+}
+.classes-container .scrolling-wrapper .class-item:hover {
+  background-color: var(--col-primary-light);
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .classes-container {
+    height: 500px;
+    padding: 5px;
+  }
+  .classes-container .scrolling-wrapper {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: auto;
+    border-radius: var(--border-r-medium);
+  }
+  .classes-container .scrolling-wrapper .class-item {
+    min-width: 400px;
+  }
+}
+
 /* profile icon */
 .profile-icon {
   height: 50px;
@@ -372,12 +422,20 @@ ul {
   .container.split.one-one {
     grid-template-columns: 1fr 1fr;
   }
+  .container.split.one-two {
+    grid-template-columns: 1fr 2fr;
+  }
   .container.split .col {
     padding: 20px;
   }
 }
 .container .col {
   padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .container .col.m-full-width {
+    padding: 0;
+  }
 }
 
 /* spaced mod */

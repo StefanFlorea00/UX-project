@@ -41,6 +41,10 @@ $breakpoint-mobile-large: 768px;
             &.one-one {
                 grid-template-columns: 1fr 1fr;
             }
+
+            &.one-two {
+                grid-template-columns: 1fr 2fr;
+            }
             
             .col {
                 padding: 20px;
@@ -50,6 +54,12 @@ $breakpoint-mobile-large: 768px;
 
     .col {
         padding: 0 20px;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            &.m-full-width {
+                padding: 0;
+            }
+        }
     }
 }
 
