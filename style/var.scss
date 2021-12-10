@@ -10,6 +10,7 @@
     --col-text: #333;
 
     --box-shadow-small: 1px 4px 16px -4px #22222288;
+    --box-shadow-med: 1px 4px 16px -4px #22222288;
 
     //borders
     --border-r-small: 5px;
@@ -24,4 +25,6 @@
 
     //fonts
   }
+
+$breakpoint-mobile-large: 768px;
 

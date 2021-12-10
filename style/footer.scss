@@ -1,0 +1,8 @@
+
+@use 'var.scss';
+
+.footer-container {
+    width: 100%;
+    background-color: var(--col-secondary);
+    padding: 10px 25px;
+}

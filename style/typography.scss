@@ -17,7 +17,14 @@ h1 ,h2, h3,h4,h5,h6 {
     font-weight: 200;
 }
 
-p, ul{
+.h3-style {
+    font-family: "cocogoose";
+    color: var(--col-text);
+    font-weight: 200;
+    font-size: 1.17em;
+}
+
+p, ul, area, span{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: var(--col-text);

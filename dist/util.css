@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -22,6 +23,17 @@ ul {
 .centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=util.css.map */

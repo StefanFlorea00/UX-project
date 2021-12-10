@@ -1,6 +1,8 @@
+/* header */
 .header-container {
   background-color: var(--col-secondary-dark);
   box-shadow: 1px 4px 16px -4px #22222288;
+  /* mobile */
 }
 .header-container .header-links li {
   display: flex;
@@ -32,7 +34,10 @@
 }
 @media (max-width: 768px) {
   .header-container {
-    position: sticky;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100%;
   }
   .header-container .header-links li a {
     display: block;
@@ -44,6 +49,7 @@
   }
 }
 
+/* desktop */
 @media (min-width: 768px) {
   .header-container nav {
     display: flex;
@@ -63,6 +69,8 @@
     padding-right: 20px;
   }
 }
+
+/* menu-icon */
 .menu-icon {
   width: 50px;
   padding: 15px;

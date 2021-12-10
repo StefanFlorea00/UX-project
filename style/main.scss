@@ -4,11 +4,15 @@
 @use 'header.scss';
 @use 'course-container.scss';
 @use 'calendar.scss';
+@use 'footer.scss';
+@use 'assignments.scss';
+@use 'next-class.scss';
 
 //TODO: move
 $breakpoint-tablet: 768px;
 $breakpoint-mobile-large: 768px;
 
+/* profile icon */
 .profile-icon {
     height: 50px;
     border-radius: 50%;
@@ -20,8 +24,9 @@ $breakpoint-mobile-large: 768px;
     }
 }
 
+/* general container */
 .container {
-    padding: 20px 0;
+    padding: 20px;
 
     &.full-height {
         padding-top: 0;
@@ -32,10 +37,6 @@ $breakpoint-mobile-large: 768px;
         padding-left: 0;
         padding-right: 0;
     }
-}
-
-.container.main {
-    height: 300px;
 
     &.split {
         @media (min-width: $breakpoint-mobile-large) {
@@ -44,14 +45,34 @@ $breakpoint-mobile-large: 768px;
             &.two-one {
             grid-template-columns: 2fr 1fr;
             }
-        }
 
-        .col {
-            padding: 20px;
+            &.one-one {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .col {
+                padding: 20px;
+            }
         }
+    }
+
+    .col {
+        padding: 0 20px;
     }
 }
 
+/* spaced mod */
+.spaced {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media (min-width: $breakpoint-mobile-large) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+    }
+}
+
+/* big image container */
 .img-with-text-container {
     position: relative;
 
@@ -62,8 +83,14 @@ $breakpoint-mobile-large: 768px;
         transform: translate(-50%, -50%);
         text-align: center;
     }
+
+    h1 {
+        font-size: 35px;
+    }
 }
 .main-img {
     height: 300px;
     width: 100%;
+    background-color: lightgray;
 }
+
