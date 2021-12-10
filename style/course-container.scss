@@ -1,11 +1,20 @@
 @use 'var.scss';
 
+$breakpoint-mobile-large: 768px;
+
+
 .course-container {
-    min-width: 400px;
     padding: 10px 20px;
     background-color: var(--col-secondary);
     margin-bottom: 20px;
     border-radius: var(--border-r-small);
+    box-shadow: 1px 4px 16px -4px #22222288;
+
+    .title {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+    }
 
     .title:hover {
         cursor: pointer;
@@ -17,6 +26,12 @@
 
         &.closed {
             display: none;
+        }
+    }
+
+    @media (min-width: $breakpoint-mobile-large){
+        & {
+        min-width: 400px;
         }
     }
 }

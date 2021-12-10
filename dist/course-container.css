@@ -7,6 +7,7 @@
   --col-alt-3: #b4c4aeff;
   --col-link: #4b635b;
   --col-text: #333;
+  --box-shadow-small: 1px 4px 16px -4px #22222288;
   --border-r-small: 5px;
   --border-r-medium: 7px;
   --border-r-large: 10px;
@@ -17,11 +18,16 @@
 }
 
 .course-container {
-  min-width: 400px;
   padding: 10px 20px;
   background-color: var(--col-secondary);
   margin-bottom: 20px;
   border-radius: var(--border-r-small);
+  box-shadow: 1px 4px 16px -4px #22222288;
+}
+.course-container .title {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
 }
 .course-container .title:hover {
   cursor: pointer;
@@ -32,6 +38,11 @@
 }
 .course-container .content-wrapper.closed {
   display: none;
+}
+@media (min-width: 768px) {
+  .course-container {
+    min-width: 400px;
+  }
 }
 
 /*# sourceMappingURL=course-container.css.map */

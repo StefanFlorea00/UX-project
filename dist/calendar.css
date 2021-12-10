@@ -1,0 +1,86 @@
+:root {
+  --col-primary: #fcb1a6ff;
+  --col-secondary: #8aa39bff;
+  --col-secondary-dark: #597c71;
+  --col-alt-1: #7d869cff;
+  --col-alt-2: #e5e8b6ff;
+  --col-alt-3: #b4c4aeff;
+  --col-link: #4b635b;
+  --col-text: #333;
+  --box-shadow-small: 1px 4px 16px -4px #22222288;
+  --border-r-small: 5px;
+  --border-r-medium: 7px;
+  --border-r-large: 10px;
+  --media-small: 600px;
+  --media-medium: 768px;
+  --media-tablet: 992px;
+  --media-desktop: 1200px;
+}
+
+.calendar {
+  overflow: hidden;
+  border-radius: var(--border-r-medium);
+  box-shadow: 1px 4px 16px -4px #22222288;
+}
+
+/* Month header */
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: var(--col-secondary);
+  text-align: center;
+}
+.month ul li {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.month .month-btn {
+  padding-top: 10px;
+}
+.month .month-btn#prev {
+  float: left;
+}
+.month .month-btn#next {
+  float: right;
+}
+.month .month-btn:hover {
+  cursor: pointer;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.weekdays li {
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+.days li {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #777;
+  width: 100%;
+}
+.days li .active {
+  padding: 5px;
+  background: var(--col-primary);
+  color: white !important;
+}
+
+/*# sourceMappingURL=calendar.css.map */
