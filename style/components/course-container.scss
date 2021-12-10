@@ -9,7 +9,7 @@ $breakpoint-mobile-large: 768px;
     margin-bottom: 20px;
     border-radius: var(--border-r-small);
     box-shadow: 1px 4px 16px -4px #22222288;
-
+    
     .title {
         min-height: 50px;
         display: flex;
@@ -31,7 +31,7 @@ $breakpoint-mobile-large: 768px;
 
     @media (min-width: $breakpoint-mobile-large){
         & {
-        min-width: 400px;
+            min-width: 400px;
         }
     }
 }

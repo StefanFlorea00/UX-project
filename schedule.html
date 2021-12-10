@@ -1,35 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Schedule</title>
     <link rel="stylesheet" href="dist/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <header>
+    <header class="header-container" data-header>
         <nav>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="header-links closed" data-header-links>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Schedule</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="groups.html">Groups</a>
+                </li>
+                <li>
+                    <a href="chat">Chat</a>
+                </li>
+                <li class="icon-container mobile-only">
+                    <a href="profile.html">
+                        <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
+                    </a>
+                </li>
+                <li class="menu-link" data-menu-toggle>
+                    <img class="menu-icon" src="assets/svg/menu-icon.svg" alt="" />
+                </li>
+            </ul>
+            <ul class="icon-container desktop-only">
+                <a href="profile.html">
+                    <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
+                </a>
             </ul>
         </nav>
     </header>
 
-    <h2>asdfa</h2>
+    <section class="full-height full-width container">
+        <div class="img-with-text-container">
+            <h1>Schedule</h1>
+            <img class="main-img" src="" />
+        </div>
+    </section>
 
+    <main class="main container">
+        <div class="schedule calendar spaced">
+            <div class="month">
+                <ul>
+                    <li id="prev" class="month-btn">&#10094;</li>
+                    <li id="next" class="month-btn">&#10095;</li>
+                    <li>August<br><span style="font-size:18px">2021</span></li>
+                </ul>
+            </div>
 
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
+            <ul class="weekdays">
+                <li>Mo</li>
+                <li>Tu</li>
+                <li>We</li>
+                <li>Th</li>
+                <li>Fr</li>
+                <li>Sa</li>
+                <li>Su</li>
+            </ul>
+
+            <ul class="days">
+                <li>1</li>
+                <li class="active">
+                    <p>2</p>
+                    <div class="assignment-container">
+                        <p class="h3-style">Assignment</p>
+                        <a href="#">
+                            <p >Blbla</p>
+                        </a>
+                        <p>Due: <span>15/12/21</span></p>
+                    </div>
+                </li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+            </ul>
+        </div>
     </main>
 
-    <footer>
-
+    <footer class="footer-container">
+        <section class="container split one-one full-width">
+            <div class="col">
+                <p>Useful Links</p>
+            </div>
+            <div class="col">
+                <p>Links</p>
+            </div>
+        </section>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
+
 </html>

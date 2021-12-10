@@ -32,3 +32,7 @@ $(selectors.toggle.container).each((i,container)=> {
                 .toggleClass(selectors.toggleClosedClass);
     })
 });
+
+// $(".schedule.calendar").find(".days").on("click", (event) => {
+//     $(event.target).toggleClass("active")
+// })

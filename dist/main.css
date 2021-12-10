@@ -197,6 +197,30 @@ ul {
   border-radius: var(--border-r-medium);
   box-shadow: 1px 4px 16px -4px #22222288;
 }
+.calendar.schedule .days li {
+  min-height: 35px;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .calendar.schedule .days li {
+    min-height: 150px;
+    padding: 10px;
+  }
+}
+.calendar.schedule .days li.active {
+  padding-top: 10px;
+  background: var(--col-primary);
+  color: white !important;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-r-medium);
+}
+.calendar.schedule .days li .assignment-container {
+  padding: 10px 5px 5px 5px;
+}
 
 /* Month header */
 .month {
@@ -254,9 +278,13 @@ ul {
   width: 100%;
 }
 .days li .active {
+  display: block;
   padding: 5px;
   background: var(--col-primary);
   color: white !important;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-r-medium);
 }
 
 .footer-container {
@@ -367,6 +395,8 @@ ul {
 /* big image container */
 .img-with-text-container {
   position: relative;
+  box-shadow: 1px 4px 16px -4px #22222288;
+  height: 300px;
 }
 .img-with-text-container h1, .img-with-text-container h2, .img-with-text-container h3, .img-with-text-container h4, .img-with-text-container h5, .img-with-text-container h6, .img-with-text-container p {
   position: absolute;
@@ -378,10 +408,9 @@ ul {
 .img-with-text-container h1 {
   font-size: 35px;
 }
-
-.main-img {
-  height: 300px;
+.img-with-text-container .main-img {
   width: 100%;
+  height: 100%;
   background-color: lightgray;
 }
 

@@ -67,6 +67,8 @@ $breakpoint-mobile-large: 768px;
 /* big image container */
 .img-with-text-container {
     position: relative;
+    box-shadow: 1px 4px 16px -4px #22222288;
+    height: 300px;
 
     h1,h2,h3,h4,h5,h6,p {
         position: absolute;
@@ -79,10 +81,10 @@ $breakpoint-mobile-large: 768px;
     h1 {
         font-size: 35px;
     }
-}
-.main-img {
-    height: 300px;
-    width: 100%;
-    background-color: lightgray;
-}
 
+    .main-img {
+        width: 100%;
+        height: 100%;
+        background-color: lightgray;
+    }
+}
