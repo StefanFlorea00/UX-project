@@ -18,20 +18,29 @@ let selectors = {
     toggleClosedClass: "closed"
 }
 
-//Header
-$(selectors.header.menuBtn).on("click", (event) => {
-    let _this = $(event.target);
-    $(_this).closest(selectors.header.linkContainer).toggleClass(selectors.toggleClosedClass);
+$(document).ready(() => {
+    initHeader();
+    initDropdowns();
 });
 
-//Generic
-$(selectors.toggle.container).each((i,container)=> {
-    $(container).find(selectors.toggle.toggleBtn).on("click", (event) => {
+//Header
+function initHeader() {
+    $(selectors.header.menuBtn).on("click", (event) => {
         let _this = $(event.target);
-        $(_this).parent().find(selectors.toggle.insideWrapper)
-                .toggleClass(selectors.toggleClosedClass);
-    })
-});
+        $(_this).closest(selectors.header.linkContainer).toggleClass(selectors.toggleClosedClass);
+    });
+}
+
+//Dropdowns
+function initDropdowns() {
+    $(selectors.toggle.container).each((i,container)=> {
+        $(container).find(selectors.toggle.toggleBtn).on("click", (event) => {
+            let _this = $(event.target);
+            $(_this).parent().find(selectors.toggle.insideWrapper)
+                    .toggleClass(selectors.toggleClosedClass);
+        })
+    });
+}
 
 // $(".schedule.calendar").find(".days").on("click", (event) => {
 //     $(event.target).toggleClass("active")
