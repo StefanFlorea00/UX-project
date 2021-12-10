@@ -18,6 +18,7 @@ $breakpoint-mobile-large: 768px;
 
 /* general container */
 .container {
+    position: relative;
     padding: 20px;
 
     &.full-height {
@@ -53,6 +54,7 @@ $breakpoint-mobile-large: 768px;
     }
 
     .col {
+        position: relative;
         padding: 0 20px;
 
         @media (max-width: $breakpoint-mobile-large) {
