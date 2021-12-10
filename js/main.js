@@ -15,12 +15,18 @@ let selectors = {
         toggleBtn: "[data-toggle-btn]",
         insideWrapper: "[data-toggle-wrapper]"
     },
-    toggleClosedClass: "closed"
+    class: {
+        classInfoContainer: "#class-info-container",
+        classItem: ".class-item",
+        classesContainer: ".classes-container"
+    },
+    toggleClosedClass: "closed",
 }
 
 $(document).ready(() => {
     initHeader();
     initDropdowns();
+    initClass();
 });
 
 //Header
@@ -38,6 +44,15 @@ function initDropdowns() {
             let _this = $(event.target);
             $(_this).parent().find(selectors.toggle.insideWrapper)
                     .toggleClass(selectors.toggleClosedClass);
+        })
+    });
+}
+
+function initClass() {
+    $(selectors.class.classesContainer).find(selectors.class.classItem).each((i,container)=> {
+        $(container).on("click", ()=> {
+
+            $(selectors.class.classInfoContainer).removeClass("hidden");
         })
     });
 }

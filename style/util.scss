@@ -27,6 +27,10 @@ ul {
     margin-right: auto;
 }
 
+.hidden {
+    display: none !important;
+}
+
 @media (max-width: $breakpoint-mobile-large) {
     .desktop-only {
         display: none !important;
