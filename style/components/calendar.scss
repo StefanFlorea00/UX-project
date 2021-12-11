@@ -112,4 +112,8 @@ $breakpoint-mobile-large: 768px;
         border-radius: var(--border-r-medium);
       }
   }
+
+  @media (min-width: $breakpoint-mobile-large) {
+    min-height: 300px;
+  }
 }

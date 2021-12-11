@@ -1,4 +1,4 @@
-input[type="text"], textarea {
+input[type="text"],input[type="email"],input[type="password"], textarea {
     appearance: none;
     border: none;
     border-radius: var(--border-r-medium);
@@ -17,15 +17,22 @@ input[type="text"]:disabled {
     margin-bottom: 10px;
 }
 
-.profile-form {
+.profile-form, .login-form {
     background-color: #eee;
     border-radius: var(--border-r-medium);
     box-shadow: 1px 4px 16px -4px #22222288;
     padding: 30px;
 }
 
-.profile-image {
+.login-form {
+    max-width: 500px;
 
+    @media (max-width: 768px) {
+        height: 90vh;
+    }
+}
+
+.profile-image {
 
     .icon-container {
         width: 200px;
@@ -42,5 +49,11 @@ input[type="text"]:disabled {
                 height: auto;
             }
         }
+    }
+}
+
+label {
+    .required {
+        color: #af0000;
     }
 }

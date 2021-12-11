@@ -57,6 +57,13 @@ function initClass() {
     });
 }
 
+function initForm() {
+    $("form").find("[type='submit']").each((e) => {
+        e.preventDefault();
+    }
+    )
+}
+
 // $(".schedule.calendar").find(".days").on("click", (event) => {
 //     $(event.target).toggleClass("active")
 // })

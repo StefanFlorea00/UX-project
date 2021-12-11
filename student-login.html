@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <main class="full-width login container">
+        <form class="login-form spaced centered">
+            <h1>Student Log in</h1>
+            <div class="form-input-group">
+                <label for="fname">Student email <span class="required">*</span></label>
+                <input type="email" id="fname" name="fname" value="" >
+            </div>
+            <div class="form-input-group">
+                <label for="lname">Password <span class="required">*</span></label>
+                <input type="password" id="lname" name="lname" value="" >
+            </div>
+            <div class="form-input-group">
+                <a href="">
+                    <p>Forgot password ?</p>
+                </a>
+            </div>
+            <div class="top-spaced flex">
+                <!-- <input type="submit" class="secondary" value="Log in"/> -->
+                <a href="index.html">
+                    <button type="button" class="secondary">Log in</button>
+                </a>
+                <a class="to-right" href="teacher-login.html">
+                    <button type="button" class="secondary">Teacher login</button>
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer-container">
+        <section class="container split one-one full-width">
+            <div class="col">
+                <p>Useful Links</p>
+            </div>
+            <div class="col">
+                <p>Links</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

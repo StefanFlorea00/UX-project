@@ -1,7 +1,7 @@
 @use 'imports.scss';
 
 //TODO: move
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 1200px;
 $breakpoint-mobile-large: 768px;
 
 /* profile icon */
@@ -29,6 +29,23 @@ $breakpoint-mobile-large: 768px;
     &.full-width {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    // main container
+    &.main {
+        @media (min-width: $breakpoint-tablet) {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+    }
+
+    //login container
+    &.login {
+        height: 100vh;
+
+        @media (min-width: $breakpoint-tablet) {
+            padding-top: 200px;
+        }
     }
 
     &.split {
@@ -76,6 +93,13 @@ $breakpoint-mobile-large: 768px;
     }
 }
 
+.top-spaced {
+    margin-top: 20px;
+    @media (min-width: $breakpoint-mobile-large) {
+        margin-top: 40px;
+}
+}
+
 /* big image container */
 .img-with-text-container {
     position: relative;
@@ -102,9 +126,8 @@ $breakpoint-mobile-large: 768px;
 }
 
 /* buttons */
-button {
+button, input[type="submit"] {
     appearance: none;
-    margin: 5px;
     height: 55px;
     width: 130px;
     border: none;

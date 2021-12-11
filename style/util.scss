@@ -27,6 +27,10 @@ ul {
     margin-right: auto;
 }
 
+.to-right {
+    margin-left: auto;
+}
+
 .hidden {
     display: none !important;
 }
@@ -35,6 +39,10 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.flex {
+    display: flex;
 }
 
 @media (max-width: $breakpoint-mobile-large) {
