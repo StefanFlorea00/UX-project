@@ -1,0 +1,46 @@
+input[type="text"], textarea {
+    appearance: none;
+    border: none;
+    border-radius: var(--border-r-medium);
+    padding: 15px;
+    width: 100%;
+}
+
+input[type="text"]:disabled {
+    background-color: #ddd;
+    color: #555;
+}
+
+
+.form-input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-form {
+    background-color: #eee;
+    border-radius: var(--border-r-medium);
+    box-shadow: 1px 4px 16px -4px #22222288;
+    padding: 30px;
+}
+
+.profile-image {
+
+
+    .icon-container {
+        width: 200px;
+        .profile-icon {
+            height: auto;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .icon-container {
+            width: 400px;
+
+            .profile-icon {
+                height: auto;
+            }
+        }
+    }
+}

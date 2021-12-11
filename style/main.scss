@@ -79,7 +79,7 @@ $breakpoint-mobile-large: 768px;
 /* big image container */
 .img-with-text-container {
     position: relative;
-    box-shadow: 1px 4px 16px -4px #22222288;
+    box-shadow: 0px 5px 10px -4px #22222254;
     height: 300px;
 
     h1,h2,h3,h4,h5,h6,p {
@@ -100,3 +100,33 @@ $breakpoint-mobile-large: 768px;
         background-color: lightgray;
     }
 }
+
+/* buttons */
+button {
+    appearance: none;
+    margin: 5px;
+    height: 55px;
+    width: 130px;
+    border: none;
+    transition: 0.3s transform;
+    border-radius: var(--border-r-medium);
+    box-shadow: 1px 4px 16px -4px #22222288;
+
+    &:active {
+        position: relative;
+        top: 1px;
+      }
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    &.primary {
+        background-color: var(--col-primary-light);
+    }
+
+    &.secondary {
+        background-color: var(--col-secondary);
+    }
+  }

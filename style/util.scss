@@ -31,6 +31,12 @@ ul {
     display: none !important;
 }
 
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 @media (max-width: $breakpoint-mobile-large) {
     .desktop-only {
         display: none !important;
@@ -51,11 +57,13 @@ ul {
 /* Track */
 ::-webkit-scrollbar-track {
     background: #eee;
+    border-radius: 3px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--col-secondary-dark);
+    border-radius: 3px;
 }
 
 /* Handle on hover */
