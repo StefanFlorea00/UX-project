@@ -150,6 +150,10 @@ h1 {
   margin-bottom: 1em;
 }
 
+h3 {
+  margin-bottom: 0.25em;
+}
+
 .h3-style {
   font-family: "Roboto";
   color: var(--col-text);

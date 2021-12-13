@@ -41,7 +41,10 @@ let selectors = {
     calendar: {
         calendar: "[data-calendar]",
         days: "[data-days]",
-        assignment: "[data-assignment]"
+        assignment: "[data-assignment]",
+        nextBtn: "#next",
+        prevBtn: "#prev",
+        month: "[data-month]"
     },
     profile: {
         logout: "[data-logout]"
@@ -144,7 +147,6 @@ function initLoginForm(form) {
 
 function initProfileForm(form) {
     form && $(selectors.profile.logout).on("click", () => {
-        console.log("aa");
         sessionStorage.removeItem('studentLoggedIn');
         sessionStorage.removeItem('teacherLoggedIn');
         window.location.replace("index.html");
@@ -166,11 +168,46 @@ function initModal() {
     })
 }
 
+const months = ["January","February","March","April","May","June","July","August","September","November","December"]
+
 function initCalendar() {
+    let today = new Date(new Date().getFullYear(), 0, 1);
+    let newDate = today;
+    $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[0]);
 
     for(let i = 2; i<= 31; i++ ) {
         $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
     }
+
+    $(selectors.calendar.nextBtn).on("click", () => {
+        addNewMonth(false);
+    });
+    $(selectors.calendar.prevBtn).on("click", () => {
+        addNewMonth(true);
+    });
+
+    function addNewMonth(reverse) {
+        if(reverse) { 
+            newDate = new Date(newDate.getFullYear(), newDate.getMonth()-1, 1);
+        }
+        else {
+            newDate = new Date(newDate.getFullYear(), newDate.getMonth()+1, 1);
+        }
+        let month = newDate.getMonth();
+        let year = newDate.getFullYear();
+        let daysInMonth = new Date(year, month, 0).getDate();
+   
+        console.log(month)
+        $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[month]);
+
+        $(selectors.calendar.calendar).find(selectors.calendar.days).empty();
+        for(let i = 2; i<= daysInMonth; i++ ) {
+            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
+        }
+    }
+
+
+
     
 
 
@@ -186,7 +223,3 @@ function initCalendar() {
         });
     });
 }
-
-// $(".schedule.calendar").find(".days").on("click", (event) => {
-//     $(event.target).toggleClass("active")
-// })
