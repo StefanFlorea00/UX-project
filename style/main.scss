@@ -43,8 +43,19 @@ $breakpoint-mobile-large: 768px;
     &.login {
         height: 100vh;
 
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: $breakpoint-mobile-large) {
             padding-top: 200px;
+        }
+
+        @media (max-width: $breakpoint-mobile-large) {
+            padding: 0;
+            margin: 0;
+
+            .login-form {
+                max-width: none;
+                margin: 0;
+                border-radius: 0;
+            }
         }
     }
 
@@ -159,6 +170,11 @@ button, input[type="submit"] {
 
     &.secondary {
         background-color: var(--col-secondary);
+    }
+
+    &.logout {
+        background-color: var(--col-red);
+        color: var(--col-grey);
     }
   }
 

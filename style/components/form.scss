@@ -18,7 +18,7 @@ input[type="text"]:disabled {
 }
 
 .profile-form, .login-form {
-    background-color: #eee;
+    background-color: var(--col-grey);
     border-radius: var(--border-r-medium);
     box-shadow: 1px 4px 16px -4px #22222288;
     padding: 30px;
@@ -28,7 +28,7 @@ input[type="text"]:disabled {
     max-width: 500px;
 
     @media (max-width: 768px) {
-        height: 90vh;
+        height: 100vh;
     }
 }
 

@@ -8,7 +8,7 @@ $breakpoint-mobile-large: 768px;
     box-shadow: 0px 5px 10px -4px #22222254;
 
     .next-class-display {
-        background-color:#eee;
+        background-color:var(--col-grey);
         min-height: 50px;
         width: 100%;
         border-radius: var(--border-r-small);
@@ -19,7 +19,7 @@ $breakpoint-mobile-large: 768px;
 
         span {
             display: block;
-            padding: 0 20px;
+            padding: 10px 20px;
         }
        
         @media (max-width: $breakpoint-mobile-large){

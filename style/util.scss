@@ -8,7 +8,7 @@ $breakpoint-mobile-large: 768px;
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
 }
 
 body {
@@ -68,7 +68,7 @@ ul {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #eee;
+    background: var(--col-grey);
     border-radius: 3px;
 }
 

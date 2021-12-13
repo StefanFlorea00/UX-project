@@ -12,7 +12,6 @@ $breakpoint-mobile-large: 768px;
         min-height: 35px;
         width: 100%;
         padding: 5px;
-        cursor: pointer;
         text-align: center;
 
         @media (min-width: $breakpoint-mobile-large) {
@@ -31,11 +30,15 @@ $breakpoint-mobile-large: 768px;
 
           &:hover {
             background-color: var(--col-primary-light);
+            cursor: pointer;
           }
         }
 
         .assignment-container {
-          padding: 10px 5px 5px 5px;
+          padding: 10px 0;
+          display: flex;
+          flex-flow: column;
+          height: 90%;
         }
       }
     }
@@ -89,7 +92,7 @@ $breakpoint-mobile-large: 768px;
 /* Days (1-31) */
 .days {
   padding: 10px;
-  background: #eee;
+  background: var(--col-grey);
   margin: 0;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -97,11 +100,11 @@ $breakpoint-mobile-large: 768px;
 
   li {
     text-align: center;
-    margin-bottom: 5px;
     font-size:12px;
-    padding: 5px;
     color: #777;
     width: 100%;
+    height: 100%;
+    padding: 5px;
 
     .active {
         display: block;
@@ -110,6 +113,7 @@ $breakpoint-mobile-large: 768px;
         width: 100%;
         height: 100%;
         border-radius: var(--border-r-medium);
+        cursor: pointer;
       }
   }
 

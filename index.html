@@ -37,7 +37,7 @@
                 </li>
             </ul>
             <ul class="icon-container desktop-only">
-                <a href="profile.html">
+                <a href="profile.html" data-profile>
                     <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test"/>
                 </a>
             </ul>
@@ -97,7 +97,7 @@
         <div class="col">
             <section class="full-width container">
                 <h1>Calendar</h1>
-                <div class="calendar spaced">
+                <div class="calendar spaced" data-calendar>
                     <div class="month">
                         <ul>
                         <li id="prev" class="month-btn">&#10094;</li>
@@ -116,18 +116,10 @@
                         <li>Su</li>
                     </ul>
                     
-                    <ul class="days">
+                    <ul class="days" data-days>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
-                        <li><span class="active">10</span></li>
-                        <li>11</li>
+                        <li><span class="active" data-assignment>2</span></li>
+                        <!-- add rest via jquery -->
                     </ul>
                 </div>
             </section>
@@ -163,6 +155,32 @@
             </div>
         </section>
     </footer>
+
+    <section class="modal-overlay hidden" data-modal>
+        <div class="modal-wrapper">
+            <div class="modal">
+                <div class="space-between">
+                    <h1>Assignment: Databases - Relational Databases</h1>
+                    <p class="close-btn" data-modal-close>&#10006;</p>
+                </div>
+                <div class="full-width full-height container">
+                    <h3 class="spaced">Description:</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h3 class="spaced">Deadline: <span>12/12/2021</span></h3>
+                    <h3>Your answer</h3>
+                    <textarea class="spaced"></textarea>
+                    <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                </div>
+                <div class="flex top-auto">
+                    <input type="submit" class="primary" value="Answer" />
+                    <button type="button" class="secondary" data-modal-close>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="js/main.js"></script>
 </body>

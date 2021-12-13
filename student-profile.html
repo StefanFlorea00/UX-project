@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header class="header-container" data-header>
+        <nav>
+            <ul class="header-links closed" data-header-links>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="groups.html">Groups</a>
+                </li>
+                <li>
+                    <a href="chat">Chat</a>
+                </li>
+                <li class="icon-container mobile-only">
+                    <a href="profile.html">
+                        <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
+                    </a>
+                </li>
+                <li class="menu-link" data-menu-toggle>
+                    <img class="menu-icon" src="assets/svg/menu-icon.svg" alt="" />
+                </li>
+            </ul>
+            <ul class="icon-container desktop-only">
+                <a href="#" data-profile>
+                    <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="full-height full-width container">
+        <div class="img-with-text-container">
+            <h1>Student Profile</h1>
+            <img class="main-img" src="" />
+        </div>
+    </section>
+
+
+    <main class="full-width main container split one-one">
+        <section class="col">
+            <div class="space-between">
+                <h1>Information</h1>
+                <button class="secondary">Edit</button>
+            </div>
+            <form class="profile-form spaced">
+                <div class="form-input-group">
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" disabled value="Mikke">
+                </div>
+                <div class="form-input-group">
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" disabled value="Christensen">
+                </div>
+                <div class="form-input-group">
+                    <label for="email">Student email:</label>
+                    <input type="text" id="email" name="email" disabled value="michr@stud.kea.dk">
+                </div>
+                <label class="spaced">Classes:</label>
+                <section class="class-item-container">
+                    <div class="class-item active">
+                        <h3>Dat21i PHP</h3>
+                    </div>
+                    <div class="class-item">
+                        <h3>Dat21i Databases</h3>
+                    </div>
+                    <div class="class-item">
+                        <h3>Dat21i User Experience</h3>
+                    </div>
+                </section>
+            </form>
+        </section>
+        <section class="col">
+            <section class="profile-image">
+                <div class="icon-container centered">
+                        <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <section class="container split one-one full-width">
+            <div class="col">
+                <p>Useful Links</p>
+            </div>
+            <div class="col">
+                <p>Links</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

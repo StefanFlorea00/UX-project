@@ -10,6 +10,8 @@
   --col-alt-3: #b4c4aeff;
   --col-link: #4b635b;
   --col-text: #333;
+  --col-grey: #eee;
+  --col-red: rgb(218, 73, 73);
   --box-shadow-small: 1px 4px 16px -4px #22222288;
   --box-shadow-med: 1px 4px 16px -4px #22222288;
   --border-r-small: 3px;
@@ -29,7 +31,7 @@
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -87,7 +89,7 @@ ul {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #eee;
+  background: var(--col-grey);
   border-radius: 3px;
 }
 
@@ -292,7 +294,6 @@ input[type=text] {
   min-height: 35px;
   width: 100%;
   padding: 5px;
-  cursor: pointer;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -312,9 +313,13 @@ input[type=text] {
 }
 .calendar.schedule .days li.active:hover {
   background-color: var(--col-primary-light);
+  cursor: pointer;
 }
 .calendar.schedule .days li .assignment-container {
-  padding: 10px 5px 5px 5px;
+  padding: 10px 0;
+  display: flex;
+  flex-flow: column;
+  height: 90%;
 }
 
 /* Month header */
@@ -358,7 +363,7 @@ input[type=text] {
 /* Days (1-31) */
 .days {
   padding: 10px;
-  background: #eee;
+  background: var(--col-grey);
   margin: 0;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -366,11 +371,11 @@ input[type=text] {
 }
 .days li {
   text-align: center;
-  margin-bottom: 5px;
   font-size: 12px;
-  padding: 5px;
   color: #777;
   width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 .days li .active {
   display: block;
@@ -379,6 +384,7 @@ input[type=text] {
   width: 100%;
   height: 100%;
   border-radius: var(--border-r-medium);
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .days {
@@ -396,7 +402,7 @@ input[type=text] {
   overflow: hidden;
   border-radius: var(--border-r-medium);
   box-shadow: 0px 5px 10px -4px #22222254;
-  background-color: #eee;
+  background-color: var(--col-grey);
   width: 100%;
   min-height: 250px;
   padding: 20px;
@@ -416,7 +422,7 @@ input[type=text] {
   box-shadow: 0px 5px 10px -4px #22222254;
 }
 .next-class-container .next-class-display {
-  background-color: #eee;
+  background-color: var(--col-grey);
   min-height: 50px;
   width: 100%;
   border-radius: var(--border-r-small);
@@ -427,7 +433,7 @@ input[type=text] {
 }
 .next-class-container .next-class-display span {
   display: block;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 @media (max-width: 768px) {
   .next-class-container .next-class-display {
@@ -442,7 +448,7 @@ input[type=text] {
   border-radius: var(--border-r-medium);
 }
 .classes-container .scrolling-wrapper {
-  background-color: #eee;
+  background-color: var(--col-grey);
   height: 100%;
   padding: 10px;
   max-height: 600px;
@@ -513,7 +519,7 @@ input[type=text] {
   min-height: 300px;
   padding: 10px;
   min-width: 300px;
-  background-color: #eee;
+  background-color: var(--col-grey);
   box-shadow: 1px 4px 16px -4px #22222288;
   border-radius: var(--border-r-medium);
   margin: 10px;
@@ -549,7 +555,7 @@ input[type=text]:disabled {
 }
 
 .profile-form, .login-form {
-  background-color: #eee;
+  background-color: var(--col-grey);
   border-radius: var(--border-r-medium);
   box-shadow: 1px 4px 16px -4px #22222288;
   padding: 30px;
@@ -560,7 +566,7 @@ input[type=text]:disabled {
 }
 @media (max-width: 768px) {
   .login-form {
-    height: 90vh;
+    height: 100vh;
   }
 }
 
@@ -588,22 +594,23 @@ label .required {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
   background-color: #3333332c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 50;
-  overflow-y: auto;
+  height: 150vh;
+}
+.modal-overlay .modal-wrapper {
+  max-height: 100%;
 }
 .modal-overlay .modal {
-  background-color: #eee;
+  background-color: var(--col-grey);
   padding: 30px;
   box-shadow: 0px 5px 10px -4px #22222254;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 .modal-overlay .modal .close-btn {
   cursor: pointer;
@@ -617,7 +624,7 @@ label .required {
 @media (min-width: 1200px) {
   .modal-overlay .modal {
     border-radius: var(--border-r-medium);
-    margin-top: 0;
+    margin-top: 150px;
     min-width: 400px;
     width: 50%;
     min-height: 400px;
@@ -625,10 +632,11 @@ label .required {
   }
 }
 
-.modal-shown {
-  overflow: hidden;
+@media (max-width: 1200px) {
+  .modal-shown {
+    overflow: hidden;
+  }
 }
-
 /* profile icon */
 .profile-icon {
   height: 50px;
@@ -662,9 +670,20 @@ label .required {
 .container.login {
   height: 100vh;
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .container.login {
     padding-top: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .container.login {
+    padding: 0;
+    margin: 0;
+  }
+  .container.login .login-form {
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
   }
 }
 @media (min-width: 768px) {
@@ -770,6 +789,10 @@ button.primary, input[type=submit].primary {
 }
 button.secondary, input[type=submit].secondary {
   background-color: var(--col-secondary);
+}
+button.logout, input[type=submit].logout {
+  background-color: var(--col-red);
+  color: var(--col-grey);
 }
 
 .flex button, .flex input[type=submit] {
