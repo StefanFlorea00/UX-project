@@ -4,7 +4,16 @@ const DEBUG = true;
 DEBUG && console.log("INIT");
 
 const sessionStorage = window.sessionStorage;
-const isMobile = navigator.userAgentData.mobile; //resolves true/false
+function getIsMobile() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        return true;
+    }
+    
+    return false;
+}
+const isMobile = getIsMobile();
+
+
 DEBUG && console.log("Is Mobile");
 
 let selectors = {
