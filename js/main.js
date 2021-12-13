@@ -1,7 +1,6 @@
 "use strict";
 const DEBUG = true;
 
-DEBUG && console.log("INIT");
 
 const sessionStorage = window.sessionStorage;
 function getIsMobile() {
@@ -52,7 +51,9 @@ let selectors = {
 }
 
 $(document).ready(() => {
+    DEBUG && console.log("INIT");
     DEBUG && console.log(sessionStorage);
+    DEBUG && console.log(isMobile);
 
     initForms();
     checkLoggedIn();
