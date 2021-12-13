@@ -55,7 +55,7 @@ h1 {
     font-size: 1.17em;
 }
 
-p, ul, area, span, button, label, input[type="submit"] {
+p, ul, area, span, button, label, input[type="submit"],  a {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: var(--col-text);
@@ -68,6 +68,7 @@ label {
 }
 
 a {
+    display: block;
     text-decoration: none;
     color: var(--col-link);
 }

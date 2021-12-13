@@ -3,6 +3,8 @@ const DEBUG = true;
 
 DEBUG && console.log("INIT");
 
+let sessionStorage = window.sessionStorage;
+
 let selectors = {
     header: {
         class: ".header-container",
@@ -24,10 +26,25 @@ let selectors = {
 }
 
 $(document).ready(() => {
+    DEBUG && console.log(sessionStorage);
+
+    initForm();
+    checkLoggedIn();
     initHeader();
     initDropdowns();
     initClass();
 });
+
+function checkLoggedIn() {
+    if(!window.location.href.includes("login")) {
+        if(sessionStorage.getItem('teacherLoggedIn') == "true" || sessionStorage.getItem('teacherLoggedIn') == "true") {
+            return;
+        }
+        else {
+            window.location.replace("student-login.html");
+        }
+    }
+}
 
 //Header
 function initHeader() {
@@ -51,17 +68,31 @@ function initDropdowns() {
 function initClass() {
     $(selectors.class.classesContainer).find(selectors.class.classItem).each((i,container)=> {
         $(container).on("click", ()=> {
-
             $(selectors.class.classInfoContainer).removeClass("hidden");
         })
     });
 }
 
 function initForm() {
+    initStudentForm();
+    initTeacherForm();
+
     $("form").find("[type='submit']").each((e) => {
         e.preventDefault();
     }
     )
+}
+
+function initStudentForm() {
+    $('#student-login-form').find("[type='submit']").on("click", () => {
+        sessionStorage.setItem('studentLoggedIn', true);
+    })
+}
+
+function initTeacherForm() {
+    $('#teacher-login-form').find("[type='submit']").on("click", () => {
+        sessionStorage.setItem('teacherLoggedIn', true);
+    })
 }
 
 // $(".schedule.calendar").find(".days").on("click", (event) => {

@@ -12,8 +12,8 @@
   --col-text: #333;
   --box-shadow-small: 1px 4px 16px -4px #22222288;
   --box-shadow-med: 1px 4px 16px -4px #22222288;
-  --border-r-small: 5px;
-  --border-r-medium: 7px;
+  --border-r-small: 3px;
+  --border-r-medium: 5px;
   --border-r-large: 10px;
   --media-small: 600px;
   --media-medium: 768px;
@@ -145,7 +145,7 @@ h1 {
   font-size: 1.17em;
 }
 
-p, ul, area, span, button, label, input[type=submit] {
+p, ul, area, span, button, label, input[type=submit], a {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: var(--col-text);
@@ -158,6 +158,7 @@ label {
 }
 
 a {
+  display: block;
   text-decoration: none;
   color: var(--col-link);
 }
@@ -400,6 +401,7 @@ input[type=text] {
 }
 .assignments-container a {
   display: block;
+  margin-bottom: 0.5em;
 }
 
 .next-class-container {
@@ -438,17 +440,17 @@ input[type=text] {
   background-color: #eee;
   height: 100%;
   padding: 10px;
+  max-height: 600px;
   display: flex;
   overflow-x: scroll;
   white-space: pre;
   align-items: center;
 }
 .classes-container .scrolling-wrapper .class-item {
-  padding: 0 15px;
+  padding: 0 25px;
   border-radius: var(--border-r-medium);
   margin: 0 20px;
   background-color: var(--col-primary);
-  min-width: 200px;
   height: 100px;
 }
 .classes-container .scrolling-wrapper .class-item:hover {
@@ -459,7 +461,6 @@ input[type=text] {
   .classes-container {
     max-height: 800px;
     border-radius: var(--border-r-medium);
-    overflow: scroll;
     box-shadow: 1px 4px 16px -4px #22222288;
   }
   .classes-container .scrolling-wrapper {
@@ -575,6 +576,42 @@ input[type=text]:disabled {
 
 label .required {
   color: #af0000;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3333332c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.modal-overlay .modal {
+  background-color: #eee;
+  padding: 30px;
+  box-shadow: 0px 5px 10px -4px #22222254;
+  width: 100%;
+  height: 100%;
+}
+.modal-overlay .modal .close-btn {
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .modal-overlay .modal {
+    border-radius: var(--border-r-medium);
+    margin-top: 0;
+    min-width: 400px;
+    width: 50%;
+    height: 400px;
+  }
+}
+
+.modal-shown {
+  overflow: hidden;
 }
 
 /* profile icon */
