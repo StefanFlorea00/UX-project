@@ -35,6 +35,9 @@ let selectors = {
         days: "[data-days]",
         assignment: "[data-assignment]"
     },
+    profile: {
+        logout: "[data-logout]"
+    },
     toggleClosedClass: "closed",
     toggleHiddenClass: "hidden"
 }
@@ -107,23 +110,33 @@ function initForms() {
         e.preventDefault();
     });
 
-    initStudentForm();
-    initTeacherForm();
+    //login
+    initLoginForm('#student-login-form');
+    initLoginForm('#teacher-login-form');
+
+    //profile
+    initProfileForm('#student-profile-form');
+    initProfileForm('#teacher-profile-form');
 }
 
-function initStudentForm() {
-    console.log($('#student-login-form').find("input[type='submit']"));
-    $('#student-login-form').find("input[type='submit']").on("click", () => {
-        sessionStorage.setItem('studentLoggedIn', true);
-        sessionStorage.removeItem('teacherLoggedIn');
+function initLoginForm(form) {
+    form && $(form).find("input[type='submit']").on("click", () => {
+        if(form.includes("student")) {
+            sessionStorage.setItem('studentLoggedIn', true);
+            sessionStorage.removeItem('teacherLoggedIn');
+        } else if (form.includes("teacher")) {
+            sessionStorage.setItem('teacherLoggedIn', true);
+            sessionStorage.removeItem('studentLoggedIn');
+        }
         window.location.replace("index.html");
     })
 }
 
-function initTeacherForm() {
-    $('#teacher-login-form').find("[type='submit']").on("click", () => {
-        sessionStorage.setItem('teacherLoggedIn', true);
+function initProfileForm(form) {
+    form && $(selectors.profile.logout).on("click", () => {
+        console.log("aa");
         sessionStorage.removeItem('studentLoggedIn');
+        sessionStorage.removeItem('teacherLoggedIn');
         window.location.replace("index.html");
     })
 }

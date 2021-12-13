@@ -25,7 +25,7 @@
                     <a href="groups.html">Groups</a>
                 </li>
                 <li>
-                    <a href="chat">Chat</a>
+                    <a href="chat.html">Chat</a>
                 </li>
                 <li class="icon-container mobile-only">
                     <a href="profile.html">
@@ -54,14 +54,14 @@
 
     <main class="full-width main container split one-one">
         <section class="col">
-            <div class="space-between">
+            <div class="flex-space-between">
                 <h1>Information</h1>
                 <div>
                     <button class="secondary">Edit</button>
-                    <button class="logout">Log out</button>
+                    <button class="logout" data-logout>Log out</button>
                 </div>
             </div>
-            <form class="profile-form spaced">
+            <form id="teacher-profile-form" class="profile-form spaced" >
                 <div class="form-input-group">
                     <label for="fname">First name:</label>
                     <input type="text" id="fname" name="fname" disabled value="Mikke">

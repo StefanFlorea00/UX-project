@@ -35,7 +35,7 @@ ul {
     display: none !important;
 }
 
-.space-between {
+.flex-space-between {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -43,6 +43,12 @@ ul {
 
 .flex {
     display: flex;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-auto {

@@ -30,6 +30,10 @@ $breakpoint-mobile-large: 768px;
         padding-left: 0;
         padding-right: 0;
     }
+    
+    &.tall {
+        min-height: 70vh;
+    }
 
     // main container
     &.main {

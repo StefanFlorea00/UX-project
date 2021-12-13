@@ -27,9 +27,7 @@ $breakpoint-mobile-large: 768px;
         }
             
         @media (max-width: $breakpoint-mobile-large) {
-            &:not(.menu-link) {
-                border-bottom: solid 1px #666;
-            }
+
             font-size: 14px;
             height: 50px;
         }

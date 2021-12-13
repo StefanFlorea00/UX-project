@@ -4,33 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Not finished</title>
     <link rel="stylesheet" href="dist/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <header>
+    <header class="header-container" data-header>
         <nav>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="header-links closed" data-header-links>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="schedule.html">Schedule</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="groups.html">Groups</a>
+                </li>
+                <li>
+                    <a href="chat.html">Chat</a>
+                </li>
+                <li class="icon-container mobile-only">
+                    <a href="profile.html">
+                        <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test"/>
+                    </a>
+                </li>
+                <li class="menu-link" data-menu-toggle>
+                    <img class="menu-icon" src="assets/svg/menu-icon.svg" alt=""/>
+                </li>
+            </ul>
+            <ul class="icon-container desktop-only">
+                <a href="profile.html" data-profile>
+                    <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test"/>
+                </a>
             </ul>
         </nav>
     </header>
 
-    <h2>asdfa</h2>
-
-
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
+    <main class="flex-centered tall container">
+        <h1 class="text-centered">Uh oh, this page is not finished</h1>
     </main>
 
-    <footer>
-
+    <footer class="footer-container">
+        <section class="container split one-one full-width">
+            <div class="col">
+                <p>Useful Links</p>
+            </div>
+            <div class="col">
+                <p>Links</p>
+            </div>
+        </section>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
