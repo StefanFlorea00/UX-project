@@ -45,6 +45,10 @@ ul {
     display: flex;
 }
 
+.top-auto {
+    margin-top: auto;
+}
+
 @media (max-width: $breakpoint-mobile-large) {
     .desktop-only {
         display: none !important;

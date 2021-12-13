@@ -66,6 +66,10 @@ ul {
   display: flex;
 }
 
+.top-auto {
+  margin-top: auto;
+}
+
 @media (max-width: 768px) {
   .desktop-only {
     display: none !important;
@@ -147,7 +151,7 @@ h1 {
 
 p, ul, area, span, button, label, input[type=submit], a {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--col-text);
 }
 
@@ -185,6 +189,7 @@ input[type=text] {
   text-align: center;
   width: 100%;
   color: var(--col-text);
+  font-weight: 600;
 }
 .header-container .header-links li:hover {
   filter: brightness(1.1);
@@ -583,12 +588,13 @@ label .required {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #3333332c;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 50;
+  overflow-y: auto;
 }
 .modal-overlay .modal {
   background-color: #eee;
@@ -596,9 +602,17 @@ label .required {
   box-shadow: 0px 5px 10px -4px #22222254;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: column;
 }
 .modal-overlay .modal .close-btn {
   cursor: pointer;
+}
+.modal-overlay .modal textarea {
+  max-height: 500px;
+  height: 200px;
+  max-width: 100%;
+  min-width: 100%;
 }
 @media (min-width: 1200px) {
   .modal-overlay .modal {
@@ -606,7 +620,8 @@ label .required {
     margin-top: 0;
     min-width: 400px;
     width: 50%;
-    height: 400px;
+    min-height: 400px;
+    height: auto;
   }
 }
 
@@ -700,6 +715,15 @@ label .required {
   }
 }
 
+.bottom-spaced {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .bottom-spaced {
+    margin-bottom: 40px;
+  }
+}
+
 /* big image container */
 .img-with-text-container {
   position: relative;
@@ -730,6 +754,7 @@ button, input[type=submit] {
   border: none;
   transition: 0.3s transform;
   border-radius: var(--border-r-medium);
+  font-weight: 600;
   box-shadow: 1px 4px 16px -4px #22222288;
 }
 button:active, input[type=submit]:active {
@@ -745,6 +770,10 @@ button.primary, input[type=submit].primary {
 }
 button.secondary, input[type=submit].secondary {
   background-color: var(--col-secondary);
+}
+
+.flex button, .flex input[type=submit] {
+  margin-right: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

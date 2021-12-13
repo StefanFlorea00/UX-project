@@ -22,22 +22,34 @@ let selectors = {
         classItem: ".class-item",
         classesContainer: ".classes-container"
     },
+    modal: {
+        modal: "[data-modal]",
+        bodyModalEffect: "modal-shown",
+        closeModal: "[data-modal-close]"
+    },
+    calendar: {
+        calendar: "[data-calendar]",
+        assignment: "[data-assignment]"
+    },
     toggleClosedClass: "closed",
+    toggleHiddenClass: "hidden"
 }
 
 $(document).ready(() => {
     DEBUG && console.log(sessionStorage);
 
-    initForm();
+    initForms();
     checkLoggedIn();
     initHeader();
     initDropdowns();
     initClass();
+    initCalendar();
+    initModal();
 });
 
 function checkLoggedIn() {
-    if(!window.location.href.includes("login")) {
-        if(sessionStorage.getItem('teacherLoggedIn') == "true" || sessionStorage.getItem('teacherLoggedIn') == "true") {
+    if (!window.location.href.includes("login")) {
+        if (sessionStorage.getItem('teacherLoggedIn') == "true" || sessionStorage.getItem('teacherLoggedIn') == "true") {
             return;
         }
         else {
@@ -56,24 +68,24 @@ function initHeader() {
 
 //Dropdowns
 function initDropdowns() {
-    $(selectors.toggle.container).each((i,container)=> {
+    $(selectors.toggle.container).each((i, container) => {
         $(container).find(selectors.toggle.toggleBtn).on("click", (event) => {
             let _this = $(event.target);
             $(_this).parent().find(selectors.toggle.insideWrapper)
-                    .toggleClass(selectors.toggleClosedClass);
+                .toggleClass(selectors.toggleClosedClass);
         })
     });
 }
 
 function initClass() {
-    $(selectors.class.classesContainer).find(selectors.class.classItem).each((i,container)=> {
-        $(container).on("click", ()=> {
-            $(selectors.class.classInfoContainer).removeClass("hidden");
+    $(selectors.class.classesContainer).find(selectors.class.classItem).each((i, container) => {
+        $(container).on("click", () => {
+            $(selectors.class.classInfoContainer).toggleClass(selectors.modal.hidden);
         })
     });
 }
 
-function initForm() {
+function initForms() {
     initStudentForm();
     initTeacherForm();
 
@@ -93,6 +105,30 @@ function initTeacherForm() {
     $('#teacher-login-form').find("[type='submit']").on("click", () => {
         sessionStorage.setItem('teacherLoggedIn', true);
     })
+}
+
+function initModal() {
+    $(selectors.modal.modal).each((i, modal) => {
+        $(modal).find(selectors.modal.closeModal).each((j, closeBtn) => {
+            DEBUG && console.log($(closeBtn))
+            $(closeBtn).on("click", (e) => {
+                DEBUG && console.log(this);
+                $(e.target).parents(selectors.modal.modal).toggleClass(selectors.toggleHiddenClass);
+                $(document).find('body').toggleClass(selectors.modal.bodyModalEffect);
+            })
+        })
+    })
+}
+
+function initCalendar() {
+    $(selectors.calendar.calendar).find(selectors.calendar.assignment).each((i, assignment) => {
+        $(assignment).on("click", () => {
+            DEBUG && console.log($(assignment), $(document).find(selectors.modal.modal));
+            $(document).find(selectors.modal.modal).toggleClass(selectors.toggleHiddenClass);
+            $(document).find('body').toggleClass(selectors.modal.bodyModalEffect);
+            $(document).find('body').scrollTop(0)
+        });
+    });
 }
 
 // $(".schedule.calendar").find(".days").on("click", (event) => {

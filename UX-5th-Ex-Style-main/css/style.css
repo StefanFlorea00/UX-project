@@ -1,0 +1,254 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+* {
+  box-sizing: border-box;
+}
+
+
+:root {
+  --primary-font: 'Poppins', sans-serif;
+  --white-space: 1rem; 
+  --main-color: #4a5b8c;
+  --accent-color: #e7ecf1;
+  --line-color: #ddd;
+  --sidebar-bg-color: #f0d4bb42;
+  --sidebar-li-bg-color: #f0d4bb7d;
+  --sidebar-a-color: #8c4f2b;
+  --sidebar-box-shadow: 0px 4px 4px 0px #8c4f2b40;
+}
+
+html {
+  font-size: 100%;
+  font-family: var(--primary-font);
+}
+
+
+header,
+main,
+footer {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: calc(2 * var(--white-space));
+}
+
+.full-width {
+  background: var(--main-color);
+  color: white;
+  width: 100%;
+}
+
+.header-wrapper h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+}
+
+.header-wrapper h2 {
+  font-size: 1.6em;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: bold;
+  margin: var(--white-space) 0;
+}
+
+.header-wrapper h3 {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.header-wrapper h4 {
+  font-size: 0.8rem;
+}
+
+main {
+  padding: calc(2 * var(--white-space));
+}
+
+section {
+  margin-bottom: calc(4 * var(--white-space));
+}
+
+.section-heading {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #777;
+  margin: 0.5rem 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swatches li {
+  margin-right: 5vw;
+  height: 15vw;
+  width: 20%;
+}
+
+ul li:last-child {
+  margin-right: 0;
+}
+
+.color-swatch-1 {
+  background-color: var(--main-color);
+}
+
+.color-swatch-2 {
+  background-color: var(--accent-color);
+}
+
+.color-swatch-3 {
+  background-color: var(--sidebar-a-color);
+}
+
+.color-swatch-4 {
+  background-color: var(--sidebar-li-bg-color);
+}
+
+.color-swatch-5 {
+  background-color: var(--sidebar-bg-color);
+}
+
+.textures li {
+  height: 10vh;
+  width: 100%;
+  margin-right: 5vw;
+}
+
+
+
+.texture-swatch-1 {
+  background: url(../img/f-web-dev.png) top left no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.texture-swatch-2 {
+  background: url(../img/f-database.png) top left no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.texture-swatch-3 {
+  background: url(../img/f-ux.png) top left no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+
+button.btnCollapse {
+  margin-top: var(--header-height);
+  background-color: var(--accent-color);
+  color: var(--main-color);
+  border: transparent;
+}
+
+button.btnCollapse:hover {
+  background-color: var(--main-color);
+  color: var(--accent-color);
+}
+.btn-layout {
+    display: flex;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--main-color);
+}
+.btn-layout:hover {
+   cursor: pointer;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+h1 {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.h2-sample {
+  font-family: var(--primary-font);
+  font-size: 1.1em;
+  color: var(--sidebar-a-color);
+}
+
+
+
+p[class*="font-details-"] {
+  margin-top: 0.5rem;
+  margin-bottom: calc(2 * var(--white-space));
+  font-size: 0.75rem;
+  font-family: var(--primary-font);
+  color: #6f6f6f;
+}
+.typography-sample{
+  font-family: var(--primary-font);
+      font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+.adjectives ul {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.adjectives ul li:not(first-child) {
+  margin-left: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+  }
+
+  .swatches li {
+    margin-right: 3%;
+    height: 10vw;
+    width: 20%;
+  }
+
+  .textures li {
+    height: 15vh;
+    width: 100%;
+    margin-right: 3%;
+  }
+  .adjectives ul {
+  font-size: 2rem;
+}
+}
+
+@media (min-width: 900px) {
+  .adjectives ul {
+    flex-direction: row;
+  }
+}

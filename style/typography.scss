@@ -55,9 +55,9 @@ h1 {
     font-size: 1.17em;
 }
 
-p, ul, area, span, button, label, input[type="submit"],  a {
+p, ul, area, span, button, label, input[type="submit"], a {
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--col-text);
 }
 
@@ -75,7 +75,7 @@ a {
 
 input[type="text"] {
     font-family: "Poppins", sans-serif;
-    font-weight: 600
+    font-weight: 600;
 }
 
 @media (max-width: $breakpoint-mobile-large) {

@@ -100,6 +100,13 @@ $breakpoint-mobile-large: 768px;
 }
 }
 
+.bottom-spaced {
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-mobile-large) {
+        margin-bottom: 40px;
+}
+}
+
 /* big image container */
 .img-with-text-container {
     position: relative;
@@ -133,6 +140,7 @@ button, input[type="submit"] {
     border: none;
     transition: 0.3s transform;
     border-radius: var(--border-r-medium);
+    font-weight: 600;
     box-shadow: 1px 4px 16px -4px #22222288;
 
     &:active {
@@ -152,4 +160,10 @@ button, input[type="submit"] {
     &.secondary {
         background-color: var(--col-secondary);
     }
+  }
+
+  .flex {
+      button, input[type="submit"] {
+          margin-right: 30px;
+      }
   }

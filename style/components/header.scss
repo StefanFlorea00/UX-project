@@ -13,11 +13,12 @@ $breakpoint-mobile-large: 768px;
         &:not(.menu-link) {
             background-color: var(--col-secondary);
         }
-        
+      
         a {
             text-align: center;
             width: 100%;
             color: var(--col-text);
+            font-weight: 600;
         }
 
         &:hover {
