@@ -34,12 +34,6 @@ $breakpoint-mobile-large: 768px;
           }
         }
 
-        &.can-add {
-          &:hover {
-            cursor: pointer;
-            background-color: #fff;
-          }
-        }
 
         .assignment-container {
           padding: 10px 0;
@@ -121,6 +115,13 @@ $breakpoint-mobile-large: 768px;
         height: 100%;
         border-radius: var(--border-r-medium);
         cursor: pointer;
+      }
+
+      &.can-add {
+        &:hover {
+          cursor: pointer;
+          background-color: #fff;
+        }
       }
   }
 

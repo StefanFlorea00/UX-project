@@ -350,10 +350,6 @@ input[type=text] {
   background-color: var(--col-primary-light);
   cursor: pointer;
 }
-.calendar.schedule .days li.can-add:hover {
-  cursor: pointer;
-  background-color: #fff;
-}
 .calendar.schedule .days li .assignment-container {
   padding: 10px 0;
   display: flex;
@@ -424,6 +420,10 @@ input[type=text] {
   height: 100%;
   border-radius: var(--border-r-medium);
   cursor: pointer;
+}
+.days li.can-add:hover {
+  cursor: pointer;
+  background-color: #fff;
 }
 @media (min-width: 768px) {
   .days {
@@ -687,7 +687,7 @@ label .required {
   width: 100%;
   background-color: #3333332c;
   z-index: 50;
-  height: 150vh;
+  min-height: 100vh;
 }
 .modal-overlay .modal-wrapper {
   max-height: 100%;
@@ -718,7 +718,7 @@ label .required {
 @media (min-width: 1000px) {
   .modal-overlay .modal {
     border-radius: var(--border-r-medium);
-    margin-top: 150px;
+    margin-top: 25px;
     padding: 30px;
     min-width: 700px;
     width: 50%;
