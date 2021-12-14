@@ -162,7 +162,24 @@ h3 {
   font-size: 1.17em;
 }
 
-p, ul, area, span, button, label, input[type=submit], a {
+section h1, article h1 {
+  font-size: 1.7em;
+}
+
+section h2, article h2 {
+  font-size: 1.3em;
+}
+
+@media (max-width: 768px) {
+  section h1 {
+    font-size: 1.4em;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+}
+p, ul, area, span, button, label, input[type=submit], a, textarea {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: var(--col-text);
@@ -282,6 +299,9 @@ input[type=text] {
   cursor: pointer;
   color: var(--col-link);
 }
+.course-container.add-new {
+  background-color: var(--col-alt-2);
+}
 .course-container .content-wrapper {
   padding: 20px 0;
 }
@@ -329,6 +349,10 @@ input[type=text] {
 .calendar.schedule .days li.active:hover {
   background-color: var(--col-primary-light);
   cursor: pointer;
+}
+.calendar.schedule .days li.can-add:hover {
+  cursor: pointer;
+  background-color: #fff;
 }
 .calendar.schedule .days li .assignment-container {
   padding: 10px 0;
@@ -466,7 +490,6 @@ input[type=text] {
   background-color: var(--col-grey);
   height: 100%;
   padding: 10px;
-  max-height: 600px;
   display: flex;
   overflow-x: scroll;
   white-space: pre;
@@ -485,11 +508,11 @@ input[type=text] {
 }
 @media (min-width: 768px) {
   .classes-container {
-    max-height: 800px;
     border-radius: var(--border-r-medium);
     box-shadow: 1px 4px 16px -4px #22222288;
   }
   .classes-container .scrolling-wrapper {
+    min-height: 600px;
     display: block;
     overflow-y: scroll;
     overflow-x: auto;
@@ -553,7 +576,7 @@ input[type=text] {
   }
 }
 
-input[type=text], input[type=email], input[type=password], textarea {
+input[type=text], input[type=email], input[type=password], textarea, input[type=date] {
   appearance: none;
   border: none;
   border-radius: var(--border-r-medium);
@@ -561,9 +584,41 @@ input[type=text], input[type=email], input[type=password], textarea {
   width: 100%;
 }
 
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus, input[type=date]:focus {
+  outline: solid 2px var(--col-secondary);
+}
+
 input[type=text]:disabled {
   background-color: #ddd;
   color: #555;
+}
+
+input[type=text].as-h3 {
+  background-color: #fff;
+  font-family: "Roboto";
+  font-weight: lighter;
+}
+input[type=text].as-h3:disabled {
+  background-color: transparent;
+}
+input[type=text].as-h3:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+textarea.as-text {
+  background-color: #fff;
+  text-align: left;
+  padding: 0;
+  font-size: 1em;
+  resize: none;
+}
+textarea.as-text:disabled {
+  background-color: transparent;
+}
+textarea.as-text:focus {
+  outline: none;
+  background-color: #fff;
 }
 
 .form-input-group {
@@ -571,11 +626,30 @@ input[type=text]:disabled {
   margin-bottom: 10px;
 }
 
+.form-input-group-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 350px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-input-group-flex input[type=text], .form-input-group-flex input[type=date] {
+  max-width: 200px;
+}
+.form-input-group-flex h1, .form-input-group-flex h2, .form-input-group-flex h3, .form-input-group-flex p, .form-input-group-flex label {
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
 .profile-form, .login-form {
   background-color: var(--col-grey);
   border-radius: var(--border-r-medium);
   box-shadow: 1px 4px 16px -4px #22222288;
   padding: 30px;
+}
+.profile-form .assignment-item, .login-form .assignment-item {
+  background-color: #fff;
 }
 
 .login-form {
@@ -641,12 +715,12 @@ label .required {
   max-width: 100%;
   min-width: 100%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .modal-overlay .modal {
     border-radius: var(--border-r-medium);
     margin-top: 150px;
     padding: 30px;
-    min-width: 400px;
+    min-width: 700px;
     width: 50%;
     min-height: 400px;
     height: auto;
@@ -656,7 +730,7 @@ label .required {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .modal-shown {
     overflow: hidden;
   }
@@ -686,9 +760,9 @@ label .required {
   padding-right: 0;
 }
 .container.tall {
-  min-height: 70vh;
+  min-height: 90vh;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .container.main {
     margin-left: 50px;
     margin-right: 50px;
@@ -713,7 +787,7 @@ label .required {
     border-radius: 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .container.split {
     display: grid;
   }
@@ -799,7 +873,7 @@ button, input[type=submit] {
   width: 130px;
   border: none;
   transition: 0.3s transform;
-  border-radius: var(--border-r-medium);
+  border-radius: var(--border-r-small);
   font-weight: 600;
   box-shadow: 1px 4px 16px -4px #22222288;
 }
@@ -816,6 +890,9 @@ button.primary, input[type=submit].primary {
 }
 button.secondary, input[type=submit].secondary {
   background-color: var(--col-secondary);
+}
+button.edit, input[type=submit].edit {
+  background-color: var(--col-alt-2);
 }
 button.logout, input[type=submit].logout {
   background-color: var(--col-red);

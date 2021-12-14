@@ -29,7 +29,7 @@ let selectors = {
     },
     class: {
         classInfoContainer: "#class-info-container",
-        classItem: ".class-item",
+        classItem: "[data-class-item]",
         classesContainer: ".classes-container"
     },
     modal: {
@@ -55,7 +55,9 @@ let selectors = {
     },
     toggleClosedClass: "closed",
     toggleHiddenClass: "hidden",
-    loggedAs: "[data-loggedAs]"
+    loggedAs: "[data-logged-as]",
+    studentOnly: "[data-student-only]",
+    teacherOnly: "[data-teacher-only]"
 }
 
 $(document).ready(() => {
@@ -65,6 +67,7 @@ $(document).ready(() => {
 
     initForms();
     checkLoggedIn();
+    displaySeparate();
     initHeader();
     initDropdowns();
     initClass();
@@ -93,6 +96,18 @@ function getLogin() {
         return 'teacher';
     }
     return 'not';
+}
+
+function displaySeparate(){
+    if(sessionStorage.getItem('studentLoggedIn') == "true") {
+        $(document).find(selectors.loggedAs).text("Student");
+        $(document).find(selectors.studentOnly).show();
+        $(document).find(selectors.teacherOnly).hide();
+    } else if (sessionStorage.getItem('teacherLoggedIn') == "true") {
+        $(document).find(selectors.loggedAs).text("Teacher");
+        $(document).find(selectors.teacherOnly).show();
+        $(document).find(selectors.studentOnly).hide();
+    }
 }
 
 /******HEADER******/
@@ -152,6 +167,8 @@ function initForms() {
     //profile
     initProfileForm('#student-profile-form');
     initProfileForm('#teacher-profile-form');
+
+    initEditForm(selectors.modal.modal);
 }
 
 function initLoginForm(form) {
@@ -174,6 +191,10 @@ function initProfileForm(form) {
         window.location.replace("index.html");
     })
 
+    initEditForm(form);
+}
+
+function initEditForm(form) {
     let editingForm = false;
     form && $(selectors.profile.edit).on("click", (e) => {
         editingForm = !editingForm;
@@ -209,6 +230,18 @@ function initModal() {
 const months = ["January","February","March","April","May","June","July","August","September","November","December"];
 function initCalendar() {
 
+    let today = new Date(new Date().getFullYear(), 0, 1);
+    let newDate = today;
+    $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[0]);
+
+    for(let i = 2; i<= 31; i++ ) {
+        if(getLogin() == "teacher") {
+            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li class="can-add" data-calendar-assignment><p>${i} +</p></li>`);
+        } else {
+            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li><p>${i}</p></li>`);
+        }
+    }
+
     function addNewMonth(reverse) {
         if(reverse) { 
             newDate = new Date(newDate.getFullYear(), newDate.getMonth()-1, 1);
@@ -224,16 +257,12 @@ function initCalendar() {
 
         $(selectors.calendar.calendar).find(selectors.calendar.days).empty();
         for(let i = 2; i<= daysInMonth; i++ ) {
-            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
+            if(getLogin() == "teacher") {
+                $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li class="can-add" data-calendar-assignment><p>${i} +</p></li>`);
+            } else {
+                $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li><p>${i}</p></li>`);
+            }
         }
-    }
-
-    let today = new Date(new Date().getFullYear(), 0, 1);
-    let newDate = today;
-    $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[0]);
-
-    for(let i = 2; i<= 31; i++ ) {
-        $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
     }
 
     $(selectors.calendar.nextBtn).on("click", () => {

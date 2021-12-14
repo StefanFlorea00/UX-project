@@ -20,6 +20,10 @@ $breakpoint-mobile-large: 768px;
         color: var(--col-link)
     }
 
+    &.add-new {
+        background-color: var(--col-alt-2);
+    }
+
     .content-wrapper {
         padding: 20px 0;
 

@@ -30,7 +30,7 @@
                     <a href="chat.html">Chat</a>
                 </li>
                 <li class="icon-container mobile-only">
-                    <a href="profile.html">
+                    <a href="#" data-profile>
                         <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
                     </a>
                 </li>
@@ -56,10 +56,10 @@
 
     <main class="full-width main container split one-two">
         <section class="col m-full-width">
-            <h1>Classes</h1>
+            <h1 class="desktop-only">Classes</h1>
             <section class="classes-container">
                 <div class="scrolling-wrapper">
-                    <div class="class-item">
+                    <div class="class-item" data-class-item>
                         <h3>Web21i - PHP</h3>
                     </div>
                     <div class="class-item">
@@ -80,8 +80,8 @@
             </section>
 
             <section class="full-width container">
-                <h2>Web21i - PHP Class </h2>
-                <h3 class="spaced">Courses</h3>
+                <h1>Web21i - PHP Class </h1>
+                <h2 class="spaced">Courses</h2>
                 <article class="course-container medium" data-toggle>
                     <h3 class="title" data-toggle-btn>Creating APIs <span class="to-right">Week 32</span></h3>
                     <section class="content-wrapper closed" data-toggle-wrapper>
@@ -89,11 +89,18 @@
                         <h3>Class: <span>E142</span></h3>
                         <h3>Date: <span>14/11/21</span></h3>
                         <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <h3 class="top-spaced">Description:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</p>
                         <h3 class="top-spaced">Related assignments</h3>
                         <section class="class-item-container">
                             <article data-assignment class="assignment-item">
                                 <h4>Create a simple redirect</h4>
                                 <p>Due: <b>12/12/21</b></p>
+                            </article>
+                            <article data-assignment data-teacher-only class="assignment-item">
+                                <h4>Add new...</h4>
                             </article>
                         </section>
                     </section>
@@ -105,10 +112,18 @@
                         <h3>Class: <span>E142</span></h3>
                         <h3>Date: <span>14/11/21</span></h3>
                         <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <h3 class="top-spaced">Description:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</p>
+                        <h3 class="top-spaced">Related assignments</h3>
                         <section class="class-item-container">
                             <article data-assignment class="assignment-item">
-                                <h4>Create a simple redirect</h4>
-                                <p>Due: <b>12/12/21</b></p>
+                                <h4>Create a login-page</h4>
+                                <p>Due: <b>5/12/21</b></p>
+                            </article>
+                            <article data-assignment data-teacher-only class="assignment-item">
+                                <h4>Add new...</h4>
                             </article>
                         </section>
                     </section>
@@ -120,10 +135,41 @@
                         <h3>Class: <span>E142</span></h3>
                         <h3>Date: <span>14/11/21</span></h3>
                         <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <h3 class="top-spaced">Description:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</p>
+                        <h3 class="top-spaced">Related assignments</h3>
                         <section class="class-item-container">
-                            <article data-assignment class="assignment-item">
-                                <h4>Create a simple redirect</h4>
-                                <p>Due: <b>12/12/21</b></p>
+                            <article data-assignment data-teacher-only class="assignment-item">
+                                <h4>Add new...</h4>
+                            </article>
+                        </section>
+                    </section>
+                </article>
+                <article class="course-container medium add-new" data-toggle data-teacher-only>
+                    <h3 class="title" data-toggle-btn>Add new...</h3>
+                    <section class="content-wrapper closed" data-toggle-wrapper>
+                        <div class="form-input-group-flex">
+                            <h3>Teacher: </h3>
+                            <input type="text"/>
+                        </div>
+                        <div class="form-input-group-flex">
+                            <h3>Class: </h3>
+                            <input type="text"/>
+                        </div>
+                        <div class="form-input-group-flex">
+                            <h3>Date: </h3>
+                            <input type="date"/>
+                        </div>
+                        <div class="form-input-group-flex">
+                            <h3>Hours: </h3>
+                            <input type="text"/>
+                        </div>
+                        <h3 class="top-spaced">Related assignments</h3>
+                        <section class="class-item-container">
+                            <article data-assignment data-teacher-only class="assignment-item">
+                                <h4>Add new...</h4>
                             </article>
                         </section>
                     </section>
@@ -134,19 +180,11 @@
                     <section class="class-item-container">
                         <article data-assignment class="assignment-item">
                             <h4>Create a simple redirect</h4>
-                            <p>Due: 12/12/21</p>
+                            <p>Due: 20/11/21</p>
                         </article>
-                        <article class="assignment-item">
-                            <h4>Assignment</h4>
-                        </article>
-                        <article class="assignment-item">
-                            <h4>Assignment</h4>
-                        </article>
-                        <article class="assignment-item">
-                            <h4>Assignment</h4>
-                        </article>
-                        <article class="assignment-item">
-                            <h4>Assignment</h4>
+                        <article data-assignment class="assignment-item">
+                            <h4>Create a login-page</h4>
+                            <p>Due: 5/12/21</p>
                         </article>
                     </section>
             </section>
@@ -166,27 +204,35 @@
 
     <section class="modal-overlay hidden" data-modal>
         <div class="modal-wrapper">
-            <article class="modal">
-                <section class="flex-space-between">
-                    <h1>Assignment: Databases - Relational Databases</h1>
+            <div class="modal">
+                <div class="flex-space-between">
+                    <h1 data-student-only>Assignment: <span>Databases - Relational Databases</span></h1>
+                    <div class="form-input-group-flex">
+                        <h1>Assignment:</h1>
+                        <input type="text" class="as-h3" value="" disabled data-form-toggleable/>
+                    </div>
                     <p class="close-btn" data-modal-close>&#10006;</p>
-                </section>
-                <section class="full-width full-height container">
+                </div>
+                <div class="full-width full-height container">
                     <h3 class="spaced">Description:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <h3 class="spaced">Deadline: <span>12/12/2021</span></h3>
-                    <h3>Your answer</h3>
-                    <textarea class="spaced"></textarea>
-                    <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                </section>
-                <section class="flex top-auto">
-                    <input type="submit" class="primary" value="Answer" />
+                    <textarea disabled class="as-text" data-form-toggleable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</textarea>
+                    <div data-teacher-only>
+                        <h3>Attach file</h3>
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">                        
+                    </div>
+                    <h3 class="spaced">Deadline: <span>12/12/2021 11:59</span></h3>
+                    <div data-student-only>
+                        <h3>Your answer</h3>
+                        <textarea class="spaced"></textarea>
+                        <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+                <div class="flex top-auto">
+                    <input type="submit" class="primary" value="Answer" data-student-only/>
+                    <button type="button" class="edit" data-edit data-teacher-only>Edit</button>
                     <button type="button" class="secondary" data-modal-close>Cancel</button>
-                </section>
-            </article>
+                </div>
+            </div>
         </div>
     </section>
 

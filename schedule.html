@@ -30,7 +30,7 @@
                     <a href="chat.html">Chat</a>
                 </li>
                 <li class="icon-container mobile-only">
-                    <a href="profile.html">
+                    <a href="#" data-profile>
                         <img class="profile-icon" src="assets/svg/profile-icon.svg" alt="test" />
                     </a>
                 </li>
@@ -93,32 +93,6 @@
         </div>
     </main>
 
-    <section class="modal-overlay hidden" data-modal>
-        <div class="modal-wrapper">
-            <div class="modal">
-                <div class="flex-space-between">
-                    <h1>Assignment: Databases - Relational Databases</h1>
-                    <p class="close-btn" data-modal-close>&#10006;</p>
-                </div>
-                <div class="full-width full-height container">
-                    <h3 class="spaced">Description:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <h3 class="spaced">Deadline: <span>12/12/2021</span></h3>
-                    <h3>Your answer</h3>
-                    <textarea class="spaced"></textarea>
-                    <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                </div>
-                <div class="flex top-auto">
-                    <input type="submit" class="primary" value="Answer" />
-                    <button type="button" class="secondary" data-modal-close>Cancel</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer-container">
         <section class="container split one-one full-width">
             <div class="col">
@@ -129,6 +103,40 @@
             </div>
         </section>
     </footer>
+
+    <section class="modal-overlay hidden" data-modal>
+        <div class="modal-wrapper">
+            <div class="modal">
+                <div class="flex-space-between">
+                    <h1 data-student-only>Assignment: <span>Databases - Relational Databases</span></h1>
+                    <div class="form-input-group-flex">
+                        <h1>Assignment:</h1>
+                        <input type="text" class="as-h3" value="" disabled data-form-toggleable/>
+                    </div>
+                    <p class="close-btn" data-modal-close>&#10006;</p>
+                </div>
+                <div class="full-width full-height container">
+                    <h3 class="spaced">Description:</h3>
+                    <textarea disabled class="as-text" data-form-toggleable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</textarea>
+                    <div data-teacher-only>
+                        <h3>Attach file</h3>
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">                        
+                    </div>
+                    <h3 class="spaced">Deadline: <span>12/12/2021 11:59</span></h3>
+                    <div data-student-only>
+                        <h3>Your answer</h3>
+                        <textarea class="spaced"></textarea>
+                        <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+                <div class="flex top-auto">
+                    <input type="submit" class="primary" value="Answer" data-student-only/>
+                    <button type="button" class="edit" data-edit data-teacher-only>Edit</button>
+                    <button type="button" class="secondary" data-modal-close>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="js/main.js"></script>
 </body>

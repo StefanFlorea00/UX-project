@@ -1,4 +1,4 @@
-$breakpoint-tablet: 1200px;
+$breakpoint-tablet: 1000px;
 
 
 .modal-overlay {
@@ -45,7 +45,7 @@ $breakpoint-tablet: 1200px;
             border-radius: var(--border-r-medium);
             margin-top: 150px;
             padding: 30px;
-            min-width: 400px;
+            min-width: 700px;
             width: 50%;
             min-height: 400px;
             height: auto

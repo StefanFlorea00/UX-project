@@ -34,6 +34,13 @@ $breakpoint-mobile-large: 768px;
           }
         }
 
+        &.can-add {
+          &:hover {
+            cursor: pointer;
+            background-color: #fff;
+          }
+        }
+
         .assignment-container {
           padding: 10px 0;
           display: flex;

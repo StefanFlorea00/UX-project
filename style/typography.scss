@@ -59,7 +59,25 @@ h3 {
     font-size: 1.17em;
 }
 
-p, ul, area, span, button, label, input[type="submit"], a {
+section h1, article h1 {
+    font-size: 1.7em;
+}
+
+section h2 ,article h2 {
+    font-size: 1.3em;
+}
+
+@media (max-width: $breakpoint-mobile-large) {  
+    section h1 {
+        font-size: 1.4em;
+    }
+
+    section h2 {
+        font-size: 1.2em;
+    }
+}
+
+p, ul, area, span, button, label, input[type="submit"], a, textarea  {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     color: var(--col-text);
@@ -77,15 +95,11 @@ a {
     color: var(--col-link);
 }
 
-input[type="text"] {
+input[type="text"]{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 }
 
 .text-centered {
     text-align: center;
-}
-
-@media (max-width: $breakpoint-mobile-large) {
-    
 }

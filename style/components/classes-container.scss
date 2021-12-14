@@ -6,7 +6,6 @@
         background-color: var(--col-grey);
         height: 100%;
         padding: 10px;
-        max-height: 600px;
         display: flex;
         overflow-x: scroll;
         white-space: pre;
@@ -29,11 +28,11 @@
 
     //desktop
     @media (min-width: 768px) {
-        max-height: 800px;
         border-radius: var(--border-r-medium);
         box-shadow: 1px 4px 16px -4px #22222288;
 
         .scrolling-wrapper {
+            min-height: 600px;
             display: block;
             overflow-y: scroll;
             overflow-x: auto;
