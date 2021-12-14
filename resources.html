@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="dist/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
     <header class="header-container" data-header>
         <nav>
@@ -47,7 +49,7 @@
     <section class="full-height full-width container">
         <div class="img-with-text-container">
             <h1>Resources</h1>
-            <img class="main-img" src="" />
+            <section class="main-img"></section>
         </div>
     </section>
 
@@ -72,60 +74,81 @@
         <section id="class-info-container" class="col hidden">
             <h1>This week (week 32)</h1>
             <section class="class-item-container">
-                <div class="class-item active">
-                    <h3>PHP - creating APIs</h3>
-                </div>
                 <div class="class-item">
-                    <h3>Databases - relational databases</h3>
-                </div>
-                <div class="class-item">
-                    <h3>UX - usability testing</h3>
+                    <h3>Creating APIs</h3>
                 </div>
             </section>
 
             <section class="full-width container">
-                <h2>Web21i - PHP Class </h1>
-                <h2>Teacher: - </h2>
-
+                <h2>Web21i - PHP Class </h2>
                 <h3 class="spaced">Courses</h3>
-                <div class="course-container short" data-toggle>
-                    <h3 class="title" data-toggle-btn >Creating APIs</h3>
-                    <div class="content-wrapper closed" data-toggle-wrapper>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="course-container short" data-toggle>
-                    <h3 class="title" data-toggle-btn >PHP - learning blabla</h3>
-                    <div class="content-wrapper closed" data-toggle-wrapper>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="course-container short" data-toggle>
-                    <h3 class="title" data-toggle-btn >PHP - learning blabla</h3>
-                    <div class="content-wrapper closed" data-toggle-wrapper>
-                        <p></p>
-                    </div>
-                </div>
+                <article class="course-container medium" data-toggle>
+                    <h3 class="title" data-toggle-btn>Creating APIs <span class="to-right">Week 32</span></h3>
+                    <section class="content-wrapper closed" data-toggle-wrapper>
+                        <h3>Teacher: <span></span></h3>
+                        <h3>Class: <span>E142</span></h3>
+                        <h3>Date: <span>14/11/21</span></h3>
+                        <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <h3 class="top-spaced">Related assignments</h3>
+                        <section class="class-item-container">
+                            <article data-assignment class="assignment-item">
+                                <h4>Create a simple redirect</h4>
+                                <p>Due: <b>12/12/21</b></p>
+                            </article>
+                        </section>
+                    </section>
+                </article>
+                <article class="course-container medium" data-toggle>
+                    <h3 class="title" data-toggle-btn>Sign-up forms<span class="to-right">Week 33</span></h3>
+                    <section class="content-wrapper closed" data-toggle-wrapper>
+                        <h3>Teacher: -</h3>
+                        <h3>Class: <span>E142</span></h3>
+                        <h3>Date: <span>14/11/21</span></h3>
+                        <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <section class="class-item-container">
+                            <article data-assignment class="assignment-item">
+                                <h4>Create a simple redirect</h4>
+                                <p>Due: <b>12/12/21</b></p>
+                            </article>
+                        </section>
+                    </section>
+                </article>
+                <article class="course-container medium" data-toggle>
+                    <h3 class="title" data-toggle-btn>Security<span class="to-right">Week 34</span></h3>
+                    <section class="content-wrapper closed" data-toggle-wrapper>
+                        <h3>Teacher: -</h3>
+                        <h3>Class: <span>E142</span></h3>
+                        <h3>Date: <span>14/11/21</span></h3>
+                        <h3>Hours: <span>8:30 - 11:30</span></h3>
+                        <section class="class-item-container">
+                            <article data-assignment class="assignment-item">
+                                <h4>Create a simple redirect</h4>
+                                <p>Due: <b>12/12/21</b></p>
+                            </article>
+                        </section>
+                    </section>
+                </article>
 
 
                 <h3 class="spaced">Assignments</h2>
-                <div class="class-item-container">
-                    <div class="assignment-item">
-                        <h4>Assignment</h4>
-                    </div>
-                    <div class="assignment-item">
-                        <h4>Assignment</h4>
-                    </div>
-                    <div class="assignment-item">
-                        <h4>Assignment</h4>
-                    </div>
-                    <div class="assignment-item">
-                        <h4>Assignment</h4>
-                    </div>
-                    <div class="assignment-item">
-                        <h4>Assignment</h4>
-                    </div>
-                </div>
+                    <section class="class-item-container">
+                        <article data-assignment class="assignment-item">
+                            <h4>Create a simple redirect</h4>
+                            <p>Due: 12/12/21</p>
+                        </article>
+                        <article class="assignment-item">
+                            <h4>Assignment</h4>
+                        </article>
+                        <article class="assignment-item">
+                            <h4>Assignment</h4>
+                        </article>
+                        <article class="assignment-item">
+                            <h4>Assignment</h4>
+                        </article>
+                        <article class="assignment-item">
+                            <h4>Assignment</h4>
+                        </article>
+                    </section>
             </section>
         </section>
     </main>
@@ -141,6 +164,33 @@
         </section>
     </footer>
 
+    <section class="modal-overlay hidden" data-modal>
+        <div class="modal-wrapper">
+            <article class="modal">
+                <section class="flex-space-between">
+                    <h1>Assignment: Databases - Relational Databases</h1>
+                    <p class="close-btn" data-modal-close>&#10006;</p>
+                </section>
+                <section class="full-width full-height container">
+                    <h3 class="spaced">Description:</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h3 class="spaced">Deadline: <span>12/12/2021</span></h3>
+                    <h3>Your answer</h3>
+                    <textarea class="spaced"></textarea>
+                    <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                </section>
+                <section class="flex top-auto">
+                    <input type="submit" class="primary" value="Answer" />
+                    <button type="button" class="secondary" data-modal-close>Cancel</button>
+                </section>
+            </article>
+        </div>
+    </section>
+
     <script src="js/main.js"></script>
 </body>
+
 </html>

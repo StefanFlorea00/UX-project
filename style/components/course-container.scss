@@ -36,5 +36,9 @@ $breakpoint-mobile-large: 768px;
         &.short {
             max-width: 700px;
         }
+
+        &.medium {
+            max-width: 1000px;
+        }
     }
 }

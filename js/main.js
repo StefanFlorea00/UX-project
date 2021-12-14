@@ -7,7 +7,6 @@ function getIsMobile() {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         return true;
     }
-    
     return false;
 }
 const isMobile = getIsMobile();
@@ -41,16 +40,22 @@ let selectors = {
     calendar: {
         calendar: "[data-calendar]",
         days: "[data-days]",
-        assignment: "[data-assignment]",
+        assignment: "[data-calendar-assignment]",
         nextBtn: "#next",
         prevBtn: "#prev",
         month: "[data-month]"
     },
+    assignments: {
+        assignment: "[data-assignment]"
+    },
     profile: {
-        logout: "[data-logout]"
+        logout: "[data-logout]",
+        edit: "[data-edit]",
+        toggleable: "[data-form-toggleable]"
     },
     toggleClosedClass: "closed",
-    toggleHiddenClass: "hidden"
+    toggleHiddenClass: "hidden",
+    loggedAs: "[data-loggedAs]"
 }
 
 $(document).ready(() => {
@@ -63,6 +68,7 @@ $(document).ready(() => {
     initHeader();
     initDropdowns();
     initClass();
+    initAssignments();
     initCalendar();
     initModal();
 });
@@ -80,14 +86,16 @@ function checkLoggedIn() {
 
 function getLogin() {
     if (sessionStorage.getItem('studentLoggedIn') == "true") {
+        $(document).find(selectors.loggedAs).text("Student");
         return 'student';
     } else if (sessionStorage.getItem('teacherLoggedIn') == "true") {
+        $(document).find(selectors.loggedAs).text("Teacher");
         return 'teacher';
     }
     return 'not';
 }
 
-//Header
+/******HEADER******/
 function initHeader() {
     $(selectors.header.menuBtn).on("click", (event) => {
         let _this = $(event.target);
@@ -99,7 +107,19 @@ function initHeader() {
     $(selectors.header.profileBtn).attr("href", profile);
 }
 
-//Dropdowns
+/******ASSIGNMENTS******/
+function initAssignments() {
+    $(selectors.assignments.assignment).each((i,assignment) => {
+        $(assignment).on("click", (e) => {
+            e.preventDefault();
+            DEBUG && console.log($(assignment), $(document).find(selectors.modal.modal));
+            $(document).find(selectors.modal.modal).toggleClass(selectors.toggleHiddenClass);
+        });
+    })
+}
+
+
+/******DROPDOWNS******/
 function initDropdowns() {
     $(selectors.toggle.container).each((i, container) => {
         $(container).find(selectors.toggle.toggleBtn).on("click", (event) => {
@@ -113,10 +133,12 @@ function initDropdowns() {
 function initClass() {
     $(selectors.class.classesContainer).find(selectors.class.classItem).each((i, container) => {
         $(container).on("click", () => {
-            $(selectors.class.classInfoContainer).toggleClass(selectors.modal.hidden);
+            $(selectors.class.classInfoContainer).toggleClass(selectors.toggleHiddenClass);
         })
     });
 }
+
+/*******FORMS********/
 
 function initForms() {
     $("form").on("submit", (e) => {
@@ -151,7 +173,19 @@ function initProfileForm(form) {
         sessionStorage.removeItem('teacherLoggedIn');
         window.location.replace("index.html");
     })
+
+    let editingForm = false;
+    form && $(selectors.profile.edit).on("click", (e) => {
+        editingForm = !editingForm;
+        $(form).find(selectors.profile.toggleable).each((i,el) => {
+            $(el).prop('disabled', !editingForm);
+        });
+        editingForm && $(e.target).text("Save");
+        !editingForm && $(e.target).text("Edit");
+    })
 }
+
+/*******MODAL********/
 
 function initModal() {
     $(selectors.modal.modal).each((i, modal) => {
@@ -168,9 +202,32 @@ function initModal() {
     })
 }
 
-const months = ["January","February","March","April","May","June","July","August","September","November","December"]
 
+
+/*******CALENDAR********/
+
+const months = ["January","February","March","April","May","June","July","August","September","November","December"];
 function initCalendar() {
+
+    function addNewMonth(reverse) {
+        if(reverse) { 
+            newDate = new Date(newDate.getFullYear(), newDate.getMonth()-1, 1);
+        }
+        else {
+            newDate = new Date(newDate.getFullYear(), newDate.getMonth()+1, 1);
+        }
+        let month = newDate.getMonth();
+        let year = newDate.getFullYear();
+        let daysInMonth = new Date(year, month, 0).getDate();
+   
+        $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[month]);
+
+        $(selectors.calendar.calendar).find(selectors.calendar.days).empty();
+        for(let i = 2; i<= daysInMonth; i++ ) {
+            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
+        }
+    }
+
     let today = new Date(new Date().getFullYear(), 0, 1);
     let newDate = today;
     $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[0]);
@@ -186,40 +243,10 @@ function initCalendar() {
         addNewMonth(true);
     });
 
-    function addNewMonth(reverse) {
-        if(reverse) { 
-            newDate = new Date(newDate.getFullYear(), newDate.getMonth()-1, 1);
-        }
-        else {
-            newDate = new Date(newDate.getFullYear(), newDate.getMonth()+1, 1);
-        }
-        let month = newDate.getMonth();
-        let year = newDate.getFullYear();
-        let daysInMonth = new Date(year, month, 0).getDate();
-   
-        console.log(month)
-        $(selectors.calendar.calendar).find(selectors.calendar.month).text(months[month]);
-
-        $(selectors.calendar.calendar).find(selectors.calendar.days).empty();
-        for(let i = 2; i<= daysInMonth; i++ ) {
-            $(selectors.calendar.calendar).find(selectors.calendar.days).append(`<li>${i}</li>`);
-        }
-    }
-
-
-
-    
-
-
-
     $(selectors.calendar.calendar).find(selectors.calendar.assignment).each((i, assignment) => {
         $(assignment).on("click", () => {
             DEBUG && console.log($(assignment), $(document).find(selectors.modal.modal));
             $(document).find(selectors.modal.modal).toggleClass(selectors.toggleHiddenClass);
-            if(isMobile) {
-                $(window).scrollTop(0);
-                // $(document).find('body').toggleClass(selectors.modal.bodyModalEffect);
-            }
         });
     });
 }

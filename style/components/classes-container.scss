@@ -14,7 +14,7 @@
 
         .class-item {
             padding: 0 25px;
-            border-radius: var(--border-r-medium);
+            border-radius: var(--border-r-small);
             margin: 0 20px;
             background-color: var(--col-primary);
             height: 100px;
@@ -65,11 +65,15 @@
         padding: 20px;
         min-width: 200px;
         margin: 0 20px;
-        border-radius: var(--border-r-medium);
+        border-radius: var(--border-r-small);
 
         &.active, &:hover {
             background-color: var(--col-secondary-light);
             cursor: pointer;
+        }
+
+        h1,h2,h3, p {
+            margin: 0;
         }
         
         &:first-child {
@@ -78,12 +82,11 @@
     }
 
     .assignment-item {
-        min-height: 300px;
-        padding: 10px;
-        min-width: 300px;
+        padding: 20px;
+        min-width: 250px;
+        cursor: pointer;
         background-color: var(--col-grey);
-        box-shadow: 1px 4px 16px -4px #22222288;
-        border-radius: var(--border-r-medium);
+        border-radius: var(--border-r-small);
         margin: 10px;
 
         &:first-child {

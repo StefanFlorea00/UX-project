@@ -8,7 +8,7 @@ $breakpoint-mobile-large: 768px;
 
 html,
 body {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body {
@@ -39,6 +39,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .flex {

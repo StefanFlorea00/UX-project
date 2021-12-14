@@ -47,7 +47,7 @@
     <section class="full-height full-width container">
         <div class="img-with-text-container">
             <h1>Student Profile</h1>
-            <img class="main-img" src="" />
+            <section class="main-img"></section>
         </div>
     </section>
 
@@ -57,22 +57,22 @@
             <div class="flex-space-between">
                 <h1>Information</h1>
                 <div>
-                <button class="secondary">Edit</button>
+                <button class="secondary" data-edit>Edit</button>
                 <button class="logout" data-logout>Log out</button>
                 </div>
             </div>
             <form id="student-profile-form" class="profile-form spaced">
                 <div class="form-input-group">
                     <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname" disabled value="Mikke">
+                    <input type="text" id="fname" name="fname" disabled value="Mikke" data-form-toggleable>
                 </div>
                 <div class="form-input-group">
                     <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname" disabled value="Christensen">
+                    <input type="text" id="lname" name="lname" disabled value="Christensen" data-form-toggleable>
                 </div>
                 <div class="form-input-group">
                     <label for="email">Student email:</label>
-                    <input type="text" id="email" name="email" disabled value="michr@stud.kea.dk">
+                    <input type="text" id="email" name="email" disabled value="michr@stud.kea.dk" data-form-toggleable>
                 </div>
                 <label class="spaced">Classes:</label>
                 <section class="class-item-container">
