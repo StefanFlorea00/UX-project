@@ -9,15 +9,34 @@ $breakpoint-mobile-large: 768px;
     border-radius: var(--border-r-small);
     box-shadow: 0px 5px 10px -4px #22222254;
 
+    &:hover {
+        .title, .arrow {
+            cursor: pointer;
+            color: var(--col-link);
+            border-color: var(--col-link);
+        }
+    }
+
     .title {
         min-height: 50px;
         display: flex;
         align-items: center;
     }
 
-    .title:hover {
-        cursor: pointer;
-        color: var(--col-link)
+    .arrow {
+        border: solid var(--col-text);
+        border-width: 0 3px 3px 0;
+        border-radius: 2px;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-135deg);
+        transition: transform 0.3s;
+    }
+
+    &.closed {
+        .arrow {
+            transform: rotate(45deg);
+        }
     }
 
     &.add-new {
@@ -26,9 +45,17 @@ $breakpoint-mobile-large: 768px;
 
     .content-wrapper {
         padding: 20px 0;
+        overflow-y: hidden;
+        transition: all 0.3s;
+        max-height: 1000px;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            max-height: 2000px;
+        }
 
         &.closed {
-            display: none;
+           max-height: 0;
+           padding: 0;
         }
     }
 

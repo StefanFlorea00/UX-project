@@ -9,6 +9,10 @@ $breakpoint-mobile-large: 768px;
     .header-links li {
         display: flex;
         align-items: center;
+        overflow: hidden;
+        max-width: 500px;
+        max-height: 300px;
+        transition: all 0.5s;
         
         &:not(.menu-link) {
             background-color: var(--col-secondary);
@@ -33,11 +37,26 @@ $breakpoint-mobile-large: 768px;
         }
     }
 
-    .header-links.closed {
-        li:not(.menu-link) {
-            display: none;
-        }
+    @media (max-width: $breakpoint-mobile-large) {   
+        .header-links.closed {
+            li:not(.menu-link) {
+                max-height: 0;
+                transition: max-height 0.5s;
+                padding: 0;
+            }
+        };
     }
+
+    @media (min-width: $breakpoint-mobile-large) {
+        .header-links.closed {
+            li:not(.menu-link) {
+                max-width: 0;
+                transition: max-width 0.5s;
+            }
+        };
+    }
+
+
 
     /* mobile */
     @media (max-width: $breakpoint-mobile-large) {   

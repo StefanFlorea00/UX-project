@@ -215,6 +215,10 @@ input[type=text] {
 .header-container .header-links li {
   display: flex;
   align-items: center;
+  overflow: hidden;
+  max-width: 500px;
+  max-height: 300px;
+  transition: all 0.5s;
 }
 .header-container .header-links li:not(.menu-link) {
   background-color: var(--col-secondary);
@@ -235,8 +239,18 @@ input[type=text] {
     height: 50px;
   }
 }
-.header-container .header-links.closed li:not(.menu-link) {
-  display: none;
+@media (max-width: 768px) {
+  .header-container .header-links.closed li:not(.menu-link) {
+    max-height: 0;
+    transition: max-height 0.5s;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .header-container .header-links.closed li:not(.menu-link) {
+    max-width: 0;
+    transition: max-width 0.5s;
+  }
 }
 @media (max-width: 768px) {
   .header-container {
@@ -290,23 +304,45 @@ input[type=text] {
   border-radius: var(--border-r-small);
   box-shadow: 0px 5px 10px -4px #22222254;
 }
+.course-container:hover .title, .course-container:hover .arrow {
+  cursor: pointer;
+  color: var(--col-link);
+  border-color: var(--col-link);
+}
 .course-container .title {
   min-height: 50px;
   display: flex;
   align-items: center;
 }
-.course-container .title:hover {
-  cursor: pointer;
-  color: var(--col-link);
+.course-container .arrow {
+  border: solid var(--col-text);
+  border-width: 0 3px 3px 0;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  transition: transform 0.3s;
+}
+.course-container.closed .arrow {
+  transform: rotate(45deg);
 }
 .course-container.add-new {
   background-color: var(--col-alt-2);
 }
 .course-container .content-wrapper {
   padding: 20px 0;
+  overflow-y: hidden;
+  transition: all 0.3s;
+  max-height: 1000px;
+}
+@media (max-width: 768px) {
+  .course-container .content-wrapper {
+    max-height: 2000px;
+  }
 }
 .course-container .content-wrapper.closed {
-  display: none;
+  max-height: 0;
+  padding: 0;
 }
 @media (min-width: 768px) {
   .course-container {
@@ -716,9 +752,13 @@ label .required {
   min-width: 100%;
 }
 @media (min-width: 1000px) {
+  .modal-overlay {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
   .modal-overlay .modal {
     border-radius: var(--border-r-medium);
-    margin-top: 25px;
     padding: 30px;
     min-width: 700px;
     width: 50%;
@@ -730,11 +770,10 @@ label .required {
   }
 }
 
-@media (max-width: 1000px) {
-  .modal-shown {
-    overflow: hidden;
-  }
+body.modal-shown {
+  overflow: hidden;
 }
+
 /* profile icon */
 .profile-icon {
   height: 50px;
@@ -847,6 +886,7 @@ label .required {
 /* big image container */
 .img-with-text-container {
   position: relative;
+  z-index: -1;
   box-shadow: 0px 5px 10px -4px #22222254;
   height: 300px;
 }

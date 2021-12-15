@@ -75,9 +75,9 @@
             </ul>
 
             <ul class="days" data-days>
-                <li>1</li>
+                <li><b>1</b></li>
                 <li class="active" data-calendar-assignment>
-                    <p>2</p>
+                    <b>2</b>
                     <div class="assignment-container desktop-only">
                         <p class="h3-style">Assignment</p>
                         <div class="top-auto">
@@ -105,38 +105,37 @@
     </footer>
 
     <section class="modal-overlay hidden" data-modal>
-        <div class="modal-wrapper">
-            <div class="modal">
-                <div class="flex-space-between">
-                    <h1 data-student-only>Assignment: <span>Databases - Relational Databases</span></h1>
-                    <div class="form-input-group-flex">
-                        <h1>Assignment:</h1>
-                        <input type="text" class="as-h3" value="" disabled data-form-toggleable/>
-                    </div>
-                    <p class="close-btn" data-modal-close>&#10006;</p>
-                </div>
-                <div class="full-width full-height container">
-                    <h3 class="spaced">Description:</h3>
-                    <textarea disabled class="as-text" data-form-toggleable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</textarea>
-                    <div data-teacher-only>
-                        <h3>Attach file</h3>
-                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">                        
-                    </div>
-                    <h3 class="spaced">Deadline: <span>12/12/2021 11:59</span></h3>
-                    <div data-student-only>
-                        <h3>Your answer</h3>
-                        <textarea class="spaced"></textarea>
-                        <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                    </div>
-                </div>
-                <div class="flex top-auto">
-                    <input type="submit" class="primary" value="Answer" data-student-only/>
-                    <button type="button" class="edit" data-edit data-teacher-only>Edit</button>
-                    <button type="button" class="secondary" data-modal-close>Cancel</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        <form class="modal">
+            <section class="flex-space-between">
+                <h1 data-student-only>Assignment: <span>Databases - Relational Databases</span></h1>
+                <section class="form-input-group-flex">
+                    <h1>Assignment:</h1>
+                    <input type="text" class="as-h3" value="" disabled data-form-toggleable/>
+                </section>
+                <p class="close-btn" data-modal-close>&#10006;</p>
+            </section>
+            <section class="full-width full-height container">
+                <h3 class="spaced">Description:</h3>
+                <textarea disabled class="as-text" data-form-toggleable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</textarea>
+                <section data-teacher-only>
+                    <h3>Attach file</h3>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">                        
+                </section>
+                
+                <h3 class="spaced">Deadline: <span>12/12/2021 11:59</span></h3>
+                <section data-student-only>
+                    <h3>Your answer</h3>
+                    <textarea class="spaced"></textarea>
+                    <input class="bottom-spaced" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                </section>
+            </section>
+            <section class="flex top-auto">
+                <input type="submit" class="primary" value="Answer" data-student-only/>
+                <button type="button" class="edit" data-edit data-teacher-only>Edit</button>
+                <button type="button" class="secondary" data-modal-close>Cancel</button>
+            </section>
+        </form>
+</section>
 
     <script src="js/main.js"></script>
 </body>
